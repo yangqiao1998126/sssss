@@ -1,0 +1,344 @@
+
+
+<% include loginNav.ejs%>
+<% include nav-login.ejs%>
+<% include base/lbt.ejs%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: #e9e9e9;
+        }
+
+        .price, .pishu, .bianpin {
+            width: 112px;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .init, .init2, .init3 {
+            background: red;
+            color: #fff;
+        }
+
+        .paixu, .paixu1, .paixu2 {
+            display: inline-block;
+            width: 100px;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+
+        .page div {
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin-left: 10px;
+            text-align: center;
+        }
+
+        .page div:nth-of-type(1), .page div:nth-of-type(4) {
+            border: 1px #000 solid;
+            text-align: center;
+            background: #d6d6d6;
+            line-height: 30px;
+            font-weight: 900;
+        }
+        .pageOne {
+            background: red;
+            color: white;
+        }
+    </style>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/layer.js"></script>
+
+</head>
+<body>
+<!--筛选条件-->
+<div style="width:1176px;height: 250px;padding: 40px 50px;  background: #fff;margin: 0 auto;margin-top: 50px;">
+    <p>
+        <span style="font-weight: 800;width:120px;display: inline-block">根据&nbsp;价格筛选</span>
+        <span id="all" class="price init">全部</span>
+        <span id="12999" class="price">1000-2999</span>
+        <span id="34999" class="price">3000-4999</span>
+        <span id="56999" class="price">5000-6999</span>
+        <span id="78999" class="price">7000-8999</span>
+        <span id="9000" class="price">9000以上</span>
+    </p>
+    <br>
+    <p>
+        <span style="font-weight: 800;width:120px;display: inline-block">根据&nbsp;匹数筛选</span>
+        <span id="allpi" class="pishu init2">全部</span>
+        <span id="yipi" class="pishu">1匹</span>
+        <span id="erpi" class="pishu">2匹</span>
+        <span id="sanpi" class="pishu">3匹</span>
+    </p>
+    <br>
+    <p>
+        <span style="font-weight: 800;width:120px;display: inline-block">根据&nbsp;变频/定频</span>
+        <span id="allbian" class="bianpin init3">全部</span>
+        <span id="bianpin" class="bianpin">变频</span>
+        <span id="dingpin" class="bianpin">定频</span>
+    </p>
+</div>
+
+<!--排序条件-->
+<div style="width: 1174px;margin: 20px auto">
+    <span class="paixu">综合排序</span>
+    <span class="paixu1">按价格升序</span>
+    <span class="paixu2">按价格降序</span>
+</div>
+
+<!--商品展示-->
+<div id="shangpin" style="width: 1174px;height:820px;margin:0 auto;background: #EEEEEE;text-align: center">
+    <% for(var i = 0;i < data.length;i++){ %>
+        <div class='shangpinzi' style="width: 380px;height: 400px;background: white;text-align: center;margin-left: 10px;margin-top:10px;float: left">
+            <img style="width: 230px;height: 230px;" src="<%= data[i].src %>" alt="">
+            <p>
+                TCL <span class="pishudom" style="color: red"><%= data[i].pishu %></span>匹1级冷暖 <span
+                        style="color: red"><%= data[i].bianpin %></span>空调
+            </p>
+            <br>
+            <p style="font-size: 12px;color: red">
+                注册成为TCL分享家，自购省钱，分享赚钱，详情可咨询客服
+            </p>
+            <br>
+            <p style="color: red;font-weight: 900"><%= data[i].price %>.00元</p>
+            <br>
+            <button  style="width: 138px;height: 30px;text-align: center;
+                line-height: 30px;border: 1px red solid;color: red;position: relative;bottom: 20px;background: #fff;">立即购买
+            </button>
+        </div>
+    <% } %>
+</div>
+
+<!--分页按钮-->
+<div style="width: 1174px;height: 35px;margin: 0 auto;">
+    <div class="page"
+         style="width: 180px;height: 33px;line-height: 33px;margin-top: 20px;margin-left: auto;margin-right: auto">
+        <div style="cursor: pointer" class="onLeft">&lt;</div>
+        <div style="cursor: pointer" class="pageNum pageOne">1</div>
+        <div style="cursor: pointer" class="pageNum">2</div>
+        <div style="cursor: pointer" class="onRight">&gt;</div>
+    </div>
+</div>
+
+<script>
+    var pageNum2 = document.getElementsByClassName('pageNum')[1]
+    var pageNum1 = document.getElementsByClassName('pageNum')[0]
+    var priceXuan = document.getElementsByClassName('price')
+    var pishuXuan = document.getElementsByClassName('pishu')
+    var bianpinXuan = document.getElementsByClassName('bianpin')
+    var shangpinzi = document.getElementsByClassName('shangpinzi')
+    var a = 0;
+    for(let i = 0 ;i<shangpinzi.length ; i++){
+        shangpinzi[i].onclick = function(){
+            location.href = '/xiangqing1/36'
+        }
+
+    }
+    //按价格筛选
+    for (let i = 0; i < priceXuan.length; i++) {
+        priceXuan[i].onclick = function () {
+            // var index = layer.load(0, {shade: false});
+            priceXuan[a].classList.remove('init')
+            this.classList.add('init')
+            $.ajax('/usercenter/airRules', {
+                method: 'GET',
+                data: {price: `${this.id}`},
+                success: function (result) {
+
+                    // $('#shangpin').html(`<h2>${result[0].pishu}</h2>`)
+
+                    $('#shangpin').text('')
+                    for (var i = 0; i < result.length; i++) {
+
+                        $('#shangpin').append($(` <div class='shangpinzi' style="width: 380px;height: 400px;background: white;text-align: center;margin-left: 10px;margin-top:10px;float: left">
+            <img style="width: 230px;height: 230px;" src="${result[i].src}" alt="">
+            <p>
+                TCL <span style="color: red">${result[i].pishu}</span>匹1级冷暖 <span
+                        style="color: red">${result[i].bianpin}</span>空调
+            </p>
+            <p style="font-size: 12px;color: red">
+                注册成为TCL分享家，自购省钱，分享赚钱，详情可咨询客服
+            </p>
+            <p style="color: red;font-weight: 900">${result[i].price}.00元</p>
+            <button  style="width: 138px;height: 30px;text-align: center;
+                line-height: 30px;border: 1px red solid;color: red;position: relative;background: #fff;">立即购买
+            </button>
+        </div>`))
+                    }
+
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+            a = i;
+        }
+    }
+    //按匹数筛选
+    var b = 0;
+    for (let i = 0; i < pishuXuan.length; i++) {
+        pishuXuan[i].onclick = function () {
+            pishuXuan[b].classList.remove('init2')
+            this.classList.add('init2')
+            $.ajax('/usercenter/airRules', {
+                method: 'GET',
+                data: {pishu: `${this.id}`},
+                success: function (result) {
+                    //var t = document.getElementById('shangpin')
+                        var t = document.getElementsByClassName('shangpinzi')
+
+                  // console.log(t[0].children[1].children[0].innerHTML)
+
+                        for(var i = 0 ;i<t.length ; i++){
+
+                            if(t[i].children[1].children[0].innerHTML == result[0].pishu){
+
+                                        var u = $(t[i]).html()
+
+                                        $('#shangpin').text('')
+                                        $('#shangpin').append($(`
+                                            <div class='shangpinzi' style="width: 380px;height: 400px;background: white;text-align: center;margin-left: 10px;margin-top:10px;float: left">
+                                                ${u}
+                                              <div>`
+                                        ))
+                            }
+
+                            
+                        }
+                    // for(var i = 0 ;i<t.children.length ; i++){
+                    //
+                    //     if(t.children[i].children[1].children[0].innerHTML == 2){
+                    //
+                    //       console.log(t.children[i])
+                    //          var u = $(t.children[i]).html()
+                    //         $('#shangpin').text('')
+                    //         // $('#shangpin').append($(`
+                    //         //     <div class='shangpinzi' style="width: 380px;height: 400px;background: white;text-align: center;margin-left: 10px;margin-top:10px;float: left">
+                    //         //         ${u}
+                    //         //       <div>`
+                    //         // ))
+                    //     }
+                    // }
+                  // console.log(result)
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+            b = i;
+        }
+    }
+
+
+    //an
+    var c = 0;
+    for(let i = 0 ;i<bianpinXuan.length ; i++){
+        bianpinXuan[i].onclick = function () {
+            bianpinXuan[c].classList.remove('init3')
+            this.classList.add('init3')
+            $.ajax('/usercenter/airRules', {
+                method: 'GET',
+                data: {bianpin: `${this.id}`},
+                success: function (result) {
+
+                    // $('#shangpin').html(`<h2>${result[0].pishu}</h2>`)
+
+                    $('#shangpin').text('')
+                    for (var i = 0; i < result.length; i++) {
+
+                        $('#shangpin').append($(` <div class='shangpinzi' style="width: 380px;height: 400px;background: white;text-align: center;margin-left: 10px;margin-top:10px;float: left">
+            <img style="width: 230px;height: 230px;" src="${result[i].src}" alt="">
+            <p>
+                TCL <span style="color: red">${result[i].pishu}</span>匹1级冷暖 <span
+                        style="color: red">${result[i].bianpin}</span>空调
+            </p>
+            <p style="font-size: 12px;color: red">
+                注册成为TCL分享家，自购省钱，分享赚钱，详情可咨询客服
+            </p>
+            <p style="color: red;font-weight: 900">${result[i].price}.00元</p>
+            <button  style="width: 138px;height: 30px;text-align: center;
+                line-height: 30px;border: 1px red solid;color: red;position: relative;background: #fff;">立即购买
+            </button>
+        </div>`))
+                    }
+
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+            c = i
+        }
+    }
+
+    pageNum1.onclick = function () {
+
+
+        /*   $.ajax('http://localhost:3000/usercenter/airConditioner/1',{
+                 method:'GET',
+
+                 success:function (result) {
+                   console.log(result)
+                 },
+                 error:function (err) {
+                   console.log(err)
+                 }
+            })*/
+
+        setTimeout(() => {
+            location.href = '/usercenter/airConditioner/1'
+        }, 1000)
+
+    }
+    pageNum2.onclick = function () {
+
+        /*        $.ajax('http://localhost:3000/usercenter/airConditioner/2',{
+                    method:'GET',
+                    data:{},
+                    success:function (result) {
+                        //console.log(result)
+                    },
+                    error:function (err) {
+                        console.log(err)
+                    }
+                })*/
+        loading()
+        setTimeout(() => {
+            location.href = '/usercenter/airConditioner/2'
+        }, 1000)
+
+    }
+
+    $('.onRight').click(function () {
+        location.href = '/usercenter/airConditioner/2'
+
+    })
+    $('.onLeft').click(function () {
+        location.href = '/usercenter/airConditioner/1'
+
+    })
+    $('.paixu1').click(function () {
+        location.href = '/usercenter/airConditioner/rising'
+
+    })
+
+    function loading() {
+        return index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+
+    }
+
+    /* $('.pageOne').click(function () {
+         alert(1)
+     })*/
+</script>
+</body>
+</html>

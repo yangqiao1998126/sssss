@@ -1,0 +1,745 @@
+<% if(a != '0' && a!= undefined){%>
+    <% include loginNav.ejs%>
+<%}else {%>
+    <% include NoLoginNav.ejs%>
+<%}%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+ <style>
+ *{
+     padding:0;
+     margin:0;
+ }
+ li{
+     list-style: none;
+ }
+ .bigimage{
+      background: url(http://s0.mall.tcl.com/group1/M00/05/E4/Ckgbll2rIm6Aep-pAAtjXIwRES4004.jpg) center;
+      height: 620px;
+      /* margin-top: -10px; */
+ }
+ .powder{
+     width:100%;
+     height:80px;
+     border-bottom:1px solid #ccc;
+ }
+ .powder img{
+     margin-left: 38px;
+     margin-top: 12px;
+     float:left;
+ }
+ .powder1{
+     font-size:14px;
+     float:left;
+     color: #555555;
+     display: inline-block;
+     line-height: 80px;
+     text-decoration: none;
+     margin: 0 10px;
+     padding: 0 5px;
+
+ }
+ .exchange{
+     font-size:14px;
+     float:left;
+     color: #555555;
+     display: inline-block;
+     line-height: 80px;
+     text-decoration: none;
+     margin: 0 10px;
+     padding: 0 5px;
+ }
+
+ .powder2{
+     width:120px;
+     height:77px;
+     float:left;
+     border-bottom:4px solid #FF0000;
+     text-align: center;
+ }
+ .powder3{
+     width:120px;
+     height: 100px;
+     border:1px solid rgb(233, 230, 230);
+     display:none;
+     position:absolute;
+     left:400px;
+     text-align:center;
+ }
+ .powder3 div{
+     width:120px;
+     height: 50px;
+     line-height: 50px;
+     float:left;
+ }
+ .powder1:hover div{
+     display:block;
+ }
+ .powder4{
+     width:1000px;
+     height: 300px;
+     border:1px solid rgb(233, 230, 230);
+     display:none;
+     position:absolute;
+     margin-left:-300px;
+     background:#fff;
+
+ }
+ .powder4 div{
+     width:1000px;
+     height:60px;
+     float: left;
+     margin-left: 250px;
+     color:#999;
+ }
+ .exchange:hover div{
+     display:block;
+ }
+ #ipt{
+     width: 140px;
+     height: 28px;
+     float: left;
+     text-indent: 8px;
+     border:1px solid #ccc;
+     margin-left: 500px;
+     margin-top: 30px;
+     outline: none;
+ }
+
+ .website{
+     margin-left: 60px;
+     line-height: 40px;
+     color: #fff;
+     padding-right: 29px;
+     font-size:12px;
+ }
+ .help{
+     color: #fff;
+     padding-right: 29px;
+     font-size:12px;
+ }
+ .order{
+     color: #fff;
+     margin-left:750px;
+     font-size:12px;
+ }
+ .vertical{
+     margin-left: 25px;
+     color:#FFF;
+     font-size:12px;
+ }
+
+
+ .firstpage{
+     width:100%;
+     height: 60px;
+ }
+ .firstpage1 img{
+     margin-left: 60px;
+     float:left;
+     
+ }
+ .firstpage a {
+     float: left;
+     margin-left: 30px;
+     line-height: 60px;
+     font-size:14px;
+     color:#333;
+ }
+ .firstpage a:hover{
+     color:#ff4526;
+ }
+ .ipt1{
+     float: right;
+     margin-right: 30px;
+     margin-top: 12.5px;
+     position: relative;
+ }
+ .ipt2{
+     width:248px;
+     height: 35px;
+     font-size:13px;
+     margin-left: 10px;
+ }
+ .ipt1 span{
+     position: absolute;
+     left:225px;
+     top:4px;
+     width:30px;
+     height: 30px;
+     line-height: 30px;
+     background: #E4E4E4;
+     border-radius: 50%;
+     text-align: center;
+     color:#666;
+     outline: none;
+ }
+ .draw{
+     width:612px;
+     height: 586px;
+     border: 20px solid #FD7850;
+     border-radius: 20px;
+     margin-left: 115px;
+     background: #F07C46;
+     float: left;
+ }
+ .draw1{
+     width: 572px;
+     height: 546px;
+     border: 20px solid #DA3912;
+     border-radius: 20px;
+ }
+ .draw2{
+     float:left;
+     width: 572px;
+     height: 182px;
+ }
+ .draw3{
+     float:left;
+     width:170px;
+     height: 170px;
+     background:#FFCDC0;
+     margin-left: 15px;
+     border-radius: 20px;
+     margin-top: 12px;
+ } 
+ .draw4{
+    float:left;
+     width:170px;
+     height: 155px;
+     background:#FFF2ED;
+     border-radius: 20px;
+ }
+ .draw4 img{
+     margin-top: 30px;
+     text-align: center;
+     margin-left: 10px;
+ }
+ .draw5 img{
+     margin-left: 30px;
+ }
+ .draw6{
+     float: left;
+     width:170px;
+     height: 170px;
+     background: #F69C00;
+     margin-left: 15px;
+     border-radius: 20px;
+     margin-top: 12px;
+ }
+ .draw7{
+    float:left;
+     width:170px;
+     height: 155px;
+     background:#FFE116;
+     border-radius: 20px;
+     text-align: center;
+ }
+ .p1{
+    font-size: 22px;
+    font-weight: bolder;
+    color: #dd4c28;
+    padding-top: 42px;
+ }
+  .p2{
+    color: #fff;
+    background: #dd4c28;
+    border-radius: 20px;
+    padding: 3px 5px;
+    font-size: 14px;
+    width: 50%;
+    margin: 10px auto;
+    font-weight: bold;
+  }
+  #act{
+      /* border:1px solid #FFE116; */
+      background:red;
+  }
+  .list{
+      width: 430px;
+      height: 546px;
+      border:30px solid #FD7850;
+      float: left;
+      margin-left: 30px;
+      border-radius: 20px;
+      background:#fff;
+      position:relative;
+      border-bottom:50px solid #FD7850;
+  }
+  #content{
+      width:430px;
+      height: 546px;
+      overflow:scroll;
+      position:absolute; 
+  }
+  #content::-webkit-scrollbar{
+    display:none
+    }
+    ul{
+        margin-left: 100px;
+    }
+    #content li{
+        margin-top: 25px;
+        font-size: 15px;
+    }
+  .p3{
+      position: absolute;
+      left:320px;
+      top:-23px;
+      font-size: 16px;
+      color:#fff;
+  }
+  .record{
+      width:160px;
+      height: 40px;
+      line-height: 40px;
+      background: #E94F3A;
+      border-radius: 5px;
+      text-align: center;
+      color:#fff;
+      position:absolute;
+      left:275px;
+      top:552px;
+  }
+  .integral{
+      width:100%;
+      height: 250px;
+      background:#EA6252;
+  }
+  .integral img{
+      margin-left: 500px;
+  }
+  .integral1{
+      width:100%;
+      height: 380px;
+      background:#EA6252;
+  }
+  .integral2{
+      float:left;
+      margin-left: 80px;
+  }
+  .integral3{
+      float:left;
+      margin-left: 50px;
+  }
+  .integral4{
+      float:left;
+      margin-left: 50px;
+  }
+  .integral5{
+      float:left;
+      margin-left: 50px;
+  }
+  .activity{
+      width:100%;
+      height: 400px;
+      background:#EA6252;
+  }
+  .activity1{
+      float:left;
+      margin-top: 100px;
+      margin-left: 170px;
+      color:#fff;
+      font-size: 16px;
+  }
+  .activity p{
+      margin-top: 10px;
+  }
+  .activity2{
+      float:right;
+      margin-top: 100px;
+      margin-right: 175px;
+  }
+  .bottom{
+      width: 100%;
+      height: 260px;
+      background:#E0E0E0;
+      margin-top: 15px;
+  }
+  .bottom1{
+      width: 1240px;
+      height:100px;
+      margin: 0 auto;
+      border-bottom: 1px solid #ccc;
+  }
+  .bottom2{
+      float:left;
+      margin-left: 50px;
+      margin-top: 30px;
+  }
+  .bottom3{
+    float:left;
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  .bottom2 img{
+      width:46px;
+      height: 46px;
+  }
+  .type1{
+      font-size: 16px;
+      font-weight: bold;
+  }
+  .type2{
+    font-size: 12px;
+    line-height: 1.1;
+    margin-top: 10px;
+  }
+  .bottom4{
+      float:left;
+      margin-left: 110px;
+      margin-top: 30px;
+  }
+  .bottom4 img{
+      width:46px;
+      height: 46px;
+  }
+  .bottom6{
+      float:left;
+      margin-left: 100px;
+      margin-top: 30px;
+  }
+  .bottom6 img{
+      width:46px;
+      height: 46px;
+  }
+  .novice{
+      width: 1240px;
+      height:100px;
+      margin: 0 auto;
+       
+  }
+  .novice1{
+      margin-left: 60px;
+      float: left;
+  }
+  .novice2{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 25px;
+  }
+  .novice3{
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+  }
+  .novice4{
+      float: left;
+      margin-left: 100px;
+  }
+  .novice5{
+      float: left;
+      margin-left: 160px;
+  }
+   
+ </style>
+<body>
+<div class="powder">
+    <img src="/image/27.png" alt="">
+    <a href="/userexp"><span class="powder1">首页</span></a>
+    <span class="powder1">论坛</span>
+    <span class="exchange">版块
+                <div class="powder4">
+                        <div><span>官方专区：TCL动态&nbsp;&nbsp;|&nbsp;&nbsp;铁粉活动&nbsp;&nbsp;|&nbsp;&nbsp;同城会</span></div>
+                        <div><span>电视：玩机评测&nbsp;&nbsp;|&nbsp;&nbsp;APP下载&nbsp;&nbsp;|&nbsp;&nbsp;固件升级&nbsp;&nbsp;|&nbsp;&nbsp;问题反馈&nbsp;&nbsp;|&nbsp;&nbsp;AI魔术师&nbsp;&nbsp;|&nbsp;&nbsp;VIP服务&nbsp;&nbsp;|&nbsp;&nbsp;电视内测组</span></div>
+                        <div><span>其他产品：冰箱洗衣机 &nbsp;&nbsp;|&nbsp;&nbsp;空调&nbsp;&nbsp;|&nbsp;&nbsp; 手机&nbsp;&nbsp;|&nbsp;&nbsp;雷鸟电视&nbsp;&nbsp;|&nbsp;&nbsp;智能产品&nbsp;&nbsp;|&nbsp;&nbsp;LED照明</span></div>
+                        <div><span>铁粉交流区：铁粉杂谈&nbsp;&nbsp;|&nbsp;&nbsp;随手拍</span></div>
+                        <div>服务大厅：站务公告&nbsp;&nbsp;|&nbsp;&nbsp;反馈建议&nbsp;&nbsp;|&nbsp;&nbsp;TCL微分销</div>
+                </div>
+        </span>
+    <span class="powder1">服务
+            <div class="powder3">
+                <div><span>系统升级</span></div>
+                <div><span>软件下载</span></div>
+            </div>
+        </span>
+    <a href="/duihuan"><span class="powder1">兑换</span></a>
+    <div class="powder2">
+        <span class="powder1">用户体验中心</span>
+    </div>
+    <input type="text"  id="ipt" value="" placeholder="请输入搜索内容">
+</div>
+
+    
+
+
+    <div> 
+        <img  width="100%"  src="/images/four3.png" alt="">
+    </div>
+   
+  
+    <div class="bigimage">
+         <!--转盘-->
+        <div class="draw">
+              <div class="draw1">
+                   <div class="draw3 small" id="act">
+                          <div class="draw4">
+                          <img src="/images/four4.png" alt="">
+                          </div>
+                    </div>
+                      
+                      <div class="draw3 small">
+                            <div  class="draw4  draw5">
+                            <img    src="/images/four5.png" alt="">
+                            </div>
+                      </div>
+
+                      <div class="draw3 small">
+                            <div  class="draw4 ">
+                            <img src="/images/four6.png" alt="">
+                            </div>
+                       </div>
+                
+
+                
+                        <div class="draw3 small">
+                             <div class="draw4 draw5">
+                             <img src="/images/four7.png" alt="">
+                             </div>
+                         </div>
+                         
+                         <div class="draw6" id="cj"> 
+                               <div  class="draw7">
+                               <p class="p1">点击抽奖</p>
+                               <p class="p2">20分/次</p>
+                               </div>
+                         </div>
+   
+                         <div class="draw3 small">
+                               <div  class="draw4 draw5">
+                               <img src="/images/four13.png" alt="">
+                               </div>
+                          </div>
+                    
+   
+   
+                     
+                  
+                        <div class="draw3 small">
+                             <div class="draw4">
+                             <img src="/images/four9.png" alt="">
+                             </div>
+                         </div>
+                         
+                         <div class="draw3 small">
+                               <div  class="draw4 draw5">
+                               <img src="/images/four12.png" alt="">
+                               </div>
+                         </div>
+   
+                         <div class="draw3 small">
+                               <div  class="draw4">
+                               <img src="/images/four6.png" alt="">
+                               </div>
+                          </div>
+                  
+   
+                 
+                
+              </div>
+        </div>
+       
+        <!--滚动条-->
+       <div class="list">
+            <p class="p3">| &nbsp; 会员中奖榜单 &nbsp;|</p>
+            <div id="content">
+                 <ul>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***36 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50积分</li>
+                     <li>恭喜&nbsp;&nbsp;***45 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***21 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;天堂雨伞</li>
+                     <li>恭喜&nbsp;&nbsp;***78 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***90 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;料理机</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***48 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10积分</li>
+                     <li>恭喜&nbsp;&nbsp;***11 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                     <li>恭喜&nbsp;&nbsp;***21 &nbsp;&nbsp;中了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20积分</li>
+                 </ul>
+            </div>
+               <div class="record">
+                   <p>查看我的中奖记录</p>
+               </div>
+
+       </div>
+    </div>
+     
+    <div class="integral">
+        <img src="/images/four15.png" alt="">
+    </div>
+    
+    <div class="integral1">
+        <div class="integral2">
+            <img src="/images/four16.png" alt="">
+        </div>
+        <div class="integral3">
+            <img src="/images/four17.png" alt="">
+        </div>
+        <div class="integral4">
+            <img src="/images/four18.png" alt="">
+        </div>
+        <div class="integral4">
+            <img src="/images/four19.png" alt="">
+        </div>
+    </div>
+
+    <div class="activity">
+       <div class="activity1">
+           <p>活动规则:</p><br>
+           <p>1.每次抽奖消耗20积分，每日有5次抽奖机会；</p>
+           <p>2.抽中实物奖品的用户请务必填写正确的地址信息，否则视为放弃该奖;</p>
+           <p>3.存在积分作弊行为用户，将给予永久封号处理；</p>
+           <p>4.对活动有疑义可咨询“TCL会员”回复“抽奖”</p>
+           <p>5.活动最终解释权归TCL积分商城所有</p>
+       </div>
+       <div class="activity2">
+           <img src="/images/four20.jpg" alt="">
+       </div>
+    </div>
+
+    <div class="bottom">
+        <!--底部top-->
+          <div class="bottom1">
+              <div class="bottom2">
+                  <img src="/images/footer21.png" alt=""></div>
+              <div>
+              
+              <div class="bottom3">
+                     <p class="type1">品类齐全 &nbsp;&nbsp;大牌保证</p>
+                     <p class="type2">几百款商品任意兑，品质护航</p>
+              </div>
+
+              <div class="bottom4">
+                  <img src="/images/four22.png" alt="">
+              </div>
+
+              <div class="bottom3">
+                    <p class="type1">退换货规则</p>
+                    <p class="type2">如有质量问题，可申请退货</p>
+             </div>
+
+              <div class="bottom6">
+                  <img src="/images/footer23.png" alt="">
+              </div>
+
+              <div class="bottom3">
+                    <p class="type1">在线客服 售后保障</p>
+                    <p class="type2">及时解决您遇到的问题</p>
+             </div>
+            
+             <div class="bottom6">
+                    <img src="/images/footer24.png" alt="">
+                </div>
+  
+                <div class="bottom3">
+                      <p class="type1">会员专属权益</p>
+                      <p class="type2">跨界福利，VIP特权</p>
+               </div>
+              
+         </div>
+              
+          </div>
+ 
+         <!--底部中间-->
+          <div class="novice">
+              <div class="novice1">
+                  <p class="novice2">新手上路</p>
+                  <p class="novice3">关于积分</p>
+                  <p class="novice3">会员权益</p>
+                  <p class="novice3">积分规则</p>
+              </div>
+              <div class="novice4">
+                    <p class="novice2"> 常见问题</p>
+                    <p class="novice3">兑换原则</p>
+                    <p class="novice3">购物领积分</p>
+                    <p class="novice3">积分活动</p>
+              </div>
+              <div class="novice4">
+                    <p class="novice2"> 友情链接</p>
+                    <p class="novice3">TCL官网</p>
+                    <p class="novice3">TCL铁粉社区</p>
+              </div>
+             
+              <div class="novice4">
+                    <p class="novice2"> 商务合作</p>
+                    <p class="novice3">huang_yc@kuyumaLl.com</p>
+                    <p class="novice2">客服热线</p>
+                    <img src="/images/footer25.png" alt="">
+              </div>
+              
+              <div class="novice5">
+                    <p class="novice2">TCL社区微博</p>
+                    <img src="/images/webo_code.jpg" alt="">
+                    <p class="novice3">点击关注</p>
+              </div>
+              
+              <div class="novice5">
+                    <p class="novice2">TCL官方服务号</p>
+                    <img src="/images/bottom_code.jpg" alt="">
+                    <p class="novice3">点击关注</p>
+              </div>
+          </div>
+    </div>
+
+</body>
+<script src="/javascripts/jquery.js"></script>
+<script>
+        var arrDiv=document.getElementsByClassName("small");
+        var oCj=document.getElementById("cj");
+        var num=0;
+        var shijian=Math.random()*5000+3200;
+        oCj.onclick=function(){
+          oTime=setInterval(dianji,200);
+        }
+        function dianji() {
+          num=num+1;
+          if (num>arrDiv.length-1){
+            num=0
+          }
+          for(j=0;j<arrDiv.length;j++){
+            arrDiv[j].id="";
+          }
+          arrDiv[num].id="act";
+          setTimeout(tingzhi,shijian);
+          function tingzhi() {
+            clearInterval(oTime)
+          }
+         }
+
+          //滚动屏
+          $(document).ready(function(){
+          content=document.getElementById('content')
+          clientheight=content.clientHeight
+          offsetheight=content.scrollHeight
+          h=offsetheight-clientheight
+          var position=0
+          function startscroll(){
+          if(content.scrollTop<h){position++;content.scrollTop=position}
+           if(content.scrollTop>=h){content.scrollTop=0;position=0}
+          }
+          setInterval(startscroll,50)
+
+          console.log(clientheight)
+          console.log(offsetheight)
+
+})
+ 
+</script>
+</html>

@@ -1,0 +1,946 @@
+<% if(a != '0' && a!= undefined){%>
+    <% include loginNav.ejs%>
+<%}else {%>
+    <% include NoLoginNav.ejs%>
+<%}%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>【TCL会员论坛】</title>
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            background: #F1F1F3;
+        }
+        li{
+            list-style:none;
+        }
+        .line{
+            float:left;
+            height:60px;
+            line-height:60px;
+            margin-left: 315px;
+            color:#fff;
+        }
+        .service{
+            float:left;
+            height:60px;
+            line-height:60px;
+            margin-left: 30px;
+            color:#fff;
+        }
+        /* .search{
+            position:relative;
+        } */
+        .ipt{
+            float: left;
+            box-sizing: border-box;
+            border:1px solid #fff;
+            background:#343434;
+            width:162px;
+            height:28px;
+            line-height: 60px;
+            /* text-indent: 8px; */
+            border-radius: 2px;
+            margin-left: 925px;
+            margin-top: -45px;
+            background: transparent;
+        }
+        /* .nav i{
+            color:#fff;
+            font-size:17px;
+            position:absolute;
+            left:1050px;
+            top: 20px;
+        } */
+
+
+        /* .register{
+            float:left;
+            height:60px;
+            line-height:60px;
+            margin-left: 15px;
+            color:#fff;
+            font-size: 16px;
+        } */
+        .blank{
+            width:100%;
+            height: 20px;
+        }
+        .bigimage{
+            margin-top: 100px;
+            width: 960px;
+            height: 350px;
+            border:0px solid red;
+            margin:0 auto;
+            border-radius: 10px;
+            position: relative;
+            /* overflow: hidden; */
+            }
+            .show{
+                width: 960px;
+                height: 350px;
+                display:none;
+                border-radius: 10px;
+        }
+        .bigimage :first-child{
+            display:inline-block;
+        }
+
+        /* #prve{
+            width: 40px;
+            height: 40px;
+            background:rgb(32, 32, 32);
+            cursor: pointer;
+            position: absolute;
+            color:#fff;
+            left:203px;
+            top:225px;
+            border:none;
+            opacity:0.5;
+            border-radius: 20px;
+            outline: none;
+        }
+        #next{
+            width: 40px;
+            height: 40px;
+            background:rgb(32, 32, 32);
+            cursor: pointer;
+            position: absolute;
+            color:#fff;
+            right:203px;
+            top:225px;
+            border:none;
+            opacity:0.7;
+            border-radius: 20px;
+            outline: none;
+        } */
+        .every{
+            width: 960px;
+            height: 250px;
+            border:0px solid #ccc;
+            margin: 0 auto;
+            margin-top: 15px;
+        }
+        .week{
+            float: left;
+            height: 250px;
+            width:565px;
+        }
+        .week img{
+            height: 250px;
+            width:565px;
+            border-radius: 10px;
+        }
+        .right{
+            float: left;
+            margin-left: 10px;
+            width: 385px;
+            height: 150px;
+        }
+        .top{
+            width: 385px;
+            height: 155px;
+            text-align: center;
+            float:left;
+        }
+        .top div{
+            width: 96.24px;
+            height: 155px;
+            float: left;
+            background: #fff;
+            border-radius: 10px;
+            
+        }
+        .top div img{
+            margin-top: 36px;
+        }
+        .top div p{
+            margin-top: 15px;
+            font-size: 12px;
+            color:rgb(48, 46, 46);
+        }
+        .bottom{
+            width: 385px;
+            height: 80px;
+            float: left;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .bottom-left{
+            width: 210px;
+            height: 80px;
+            background: #BD3A3A;
+            border-radius: 10px 0  0 10px;
+            float: left;
+        }
+        .sign{
+            font-size:16px;
+            color:#fff;
+            line-height: 50px;
+        }
+        .continuity{
+            font-size:12px;
+            color:#fff;
+            line-height: 20px;
+        }
+        .bottom-right{
+            width: 175px;
+            height: 80px;
+            float: left;
+            background: #FD5253;
+            border-radius: 0  10px 10px 0;
+            }   
+        .bottom img{
+            margin-top: 30px;
+            }
+        .sign1{
+            margin-top: 2px;
+            font-size:18px;
+            color:#fff;
+            }
+            .task{
+                width:960px;
+                height: 40px;
+                background:#fff;
+                margin:0 auto;
+                margin-top: 20px;
+                border-radius: 8px;
+                line-height: 40px;
+            }
+            .task img{
+                margin-left: 15px;
+                margin-top: 10px;
+                float: left;
+            }
+            .task1{
+                font-size:15px;
+                font-weight: bolder;
+                color:#B29797;
+                font-family: FZLTCHK--GBK1-0;
+                margin-right: 76px;
+                margin-left: 10px;
+                float: left;
+            }
+            .task2{
+                font-size:12px;
+                float:left;
+                margin-right: 40px;
+                color:#B29797;
+            }
+            .task3{
+                float:right;
+                margin-right: 20px;
+                font-weight: bolder;
+            }
+            .national{
+                width:960px;
+                height: 370px;
+                margin:0 auto;
+                margin-top: 15px;
+            
+            }
+            .national-left{
+                width: 620px;
+                height: 370px;
+                border-radius: 10px;
+                overflow: hidden;
+                background:#fff;
+                float: left;
+            }
+            .national4{
+                width: 620px;
+                height: 230px;
+            }
+            .national1{
+                box-sizing: border-box;
+                display: block;
+                font-family: FZLTCHK--GBK1-0;
+                font-size: 23px;
+                font-weight: bolder;
+                color: #505050;
+                line-height: 28px;
+                padding-top: 14px;
+                margin-left: 10px;
+            }
+            
+            .iron{
+                color: #FD5253;
+                font-size:12px;
+                margin-left: 10px;
+            }
+            .national2{
+                line-height: 28px;
+                font-size: 12px;
+                color: #8F8F8F;
+            }
+            .national3{
+                margin-left: 10px;
+                font-size: 12px;
+                color: rgb(39, 37, 37);
+                
+            }
+            .national5{
+                margin-left: 10px;
+                margin-top: 20px;
+            }
+            .national6{
+                margin-left: 460px;
+            }
+            .national-right{
+                width:310px;
+                height: 370px;
+                background:#fff;
+                float: right;
+                border-radius: 10px;
+            }
+            .national7{
+                width:310px;
+                height: 60px;
+                border-bottom:1px solid #ccc;
+            }
+            .national7 span{
+                box-sizing: border-box;
+                display: block;
+                font-family: FZLTCHK--GBK1-0;
+                font-size: 23px;
+                font-weight: bolder;
+                color: #505050;
+                line-height: 30px;
+                padding-top: 14px;
+                margin-left: 10px;
+            
+            }
+            .national8{
+                width:310px;
+                height: 30px;
+                line-height: 30px;
+                margin-left: 10px;
+                font-size: 16px;
+            }
+            .national9{
+                width:310px;
+                height: 30px;
+                line-height:30px;
+                margin-left: 10px;
+                font-size: 16px;
+            }
+            .new{
+                color:#FD5253;
+            }
+            .cleaning{
+                width:960px;
+                height: 370px;
+                margin:0 auto;
+                margin-top: 15px;
+            
+            }
+            .cleaning1{
+                width: 620px;
+                height: 370px;
+                border-radius: 10px;
+                overflow: hidden;
+                background:#fff;
+                float: left;
+                
+            }
+            .cleaning2{
+                width:310px;
+                height: 370px;
+                background:#fff;
+                float: right;
+                border-radius: 10px;
+            }
+            .cleaning2 p{
+                line-height: 40px;
+                font-family: FZLTCHK--GBK1-0;
+                font-weight: 700;
+                font-size: 16px;
+                color: #4E4E4E;
+                letter-spacing: 1px;
+                padding-left: 15px
+            }
+            .cleaning2 img{
+                margin-left: 20px;
+            }
+            .share{
+                width:960px;
+                height: 370px;
+                margin:0 auto;
+                margin-top: 15px;
+                
+            }
+            .share1{
+                width: 620px;
+                height: 370px;
+                border-radius: 10px;
+                overflow: hidden;
+                background:#fff;
+                float: left;
+            }
+            .share2{
+                width:310px;
+                height: 370px;
+                background:#fff;
+                float: right;
+                border-radius: 10px;
+                
+            }
+            .share2 p{
+                line-height: 40px;
+                font-family: FZLTCHK--GBK1-0;
+                font-weight: 700;
+                font-size: 16px;
+                color: #4E4E4E;
+                letter-spacing: 1px;
+                padding-left: 15px
+            }
+            .community{
+                width:100%;
+                height: 260px;
+                margin-top: 50px;
+            }
+            .community1{
+                width:100%;
+                height: 205px;
+                background:#262626;
+                float:left;
+            }
+            .community2{
+                width:100%;
+                height: 55px;
+                background:#191919;
+                float:left;
+            }
+            .community2 p{
+                color: #7e7e7e;
+                font-size:12px;
+                line-height: 55px;
+                margin-left: 150px;
+            }
+            .community3{
+                width:960px;
+                height: 205px;
+                float:left;
+            }
+            .community4{
+                width:350px;
+                height: 205px;
+                float:left;
+                
+            }
+            .wechat{
+                float:left;
+            }
+            .community4 p{
+                font-size:14px;
+                color:#fff;
+                float:left;
+            }
+            .nav1{
+                font-size: 14px;
+                color: #7e7e7e;
+                font-weight: 600;
+                line-height: 20px;
+                float:left;
+                margin-left: 150px;
+                margin-top: 50px;
+            }
+            .nav2{
+                line-height: 20px;
+                display: block;
+                font-size: 14px;
+                float:left;
+                margin-left: 20px;
+                margin-top: 50px;
+                color: #b6b6b6;
+            }
+            .community img{
+                float:left;
+                margin-left: 220px;
+                margin-top: 30px;
+            }
+            .friendship{
+                font-size: 14px;
+                color: #b6b6b6;
+                /* font-weight: 600; */
+                line-height: 20px;
+                float:left;
+                margin-left: 150px;
+                margin-top: 10px;
+            }
+            .scroll{
+                position: fixed;
+                display: none;
+                right: 0px;
+                bottom: 50px;
+                cursor: pointer;
+                z-index: 1;
+            }
+            .scroll img{
+                width: 60px;
+                height: 60px;
+                background: #ccc;
+            }
+            .aside{
+                width:50px;
+                height: 300px;
+                position: fixed;
+                top:100px;
+                right:0;
+                cursor: pointer;
+                z-index: 1;
+                text-align: center;
+            }
+            .aside div{
+                width:50px;
+                height: 60px;
+                float:left;
+                background:#fff;
+                line-height: 60px;
+            }
+            .aside div img{
+                width:30px;
+                height: 30px;
+            
+            }
+            .aside1{
+                display:none;
+            }
+            .shijian{
+                width: 30px;
+                height: 30px;
+                line-height:0.6rem;
+                background: #fff;
+                border-radius: 3px;
+                font-size: 14px;
+                text-align: center;
+                color:#999;
+                border:none;
+                margin-right: 10px;
+                outline:none;
+            }
+            .dot{
+                position: absolute;
+                bottom:20px;
+                left:50%;
+            }  
+            .li{
+                width:15px;
+                height: 15px;
+                border-radius: 50%;
+                background: #fff;
+                float:left;
+                margin-right: 30px;
+            } 
+            .powder{
+                width:100%;
+                height:80px;
+                /* border-bottom:1px solid #ccc; */
+                background: #fff;
+            }
+            .powder img{
+                margin-left: 38px;
+                margin-top: 12px;
+                float:left;
+            }
+            .powder1{
+                font-size:14px;
+                float:left;
+                color: #555555;
+                display: inline-block;
+                line-height: 80px;
+                text-decoration: none;
+                margin: 0 10px;
+                padding: 0 5px;
+            }
+            .exchange{
+                font-size:14px;
+                float: left;
+                color: #555555;
+                display: inline-block;
+                line-height: 80px;
+                text-decoration: none;
+                margin: 0 10px;
+                padding: 0 5px;
+            }
+            .powder2{
+                width:120px;
+                height:77px;
+                float:left;
+                text-align: center;
+                cursor: pointer;
+            }
+            .powder3{
+                width:120px;
+                height: 100px;
+                border:1px solid rgb(233, 230, 230);
+                display:none;
+                position:absolute;
+                left:400px;
+                text-align:center;
+                background: white;
+            }
+            .powder3 div{
+                width:120px;
+                height: 50px;
+                line-height: 50px;
+                float:left;
+            }
+            .powder1:hover div{
+                display:block;
+            }
+            .powder4{
+                width:1000px;
+                height: 300px;
+                border:1px solid rgb(233, 230, 230);
+                display:none;
+                position:absolute;
+                margin-left:-300px;
+                background:#fff;
+
+            }
+            .powder4 div{
+                width:1000px;
+                height:60px;
+                float: left;
+                margin-left: 250px;
+                color:#999;
+            }
+            .exchange:hover div{
+                display:block;
+            }
+            #ipt{
+                width: 140px;
+                height: 28px;
+                float: left;
+                text-indent: 8px;
+                border:1px solid #ccc;
+                margin-left: 500px;
+                margin-top: 30px;
+                outline: none;
+            }
+            .powder_first{
+                border-bottom:4px solid #FF0000;
+            }              
+    </style>
+</head>
+<body>
+    <!--导航栏-->
+    <div class="powder">
+        <img src="/image/27.png" alt="">
+        <a href="/userexp"><span class="powder1 powder_first">首页</span></a>
+        <span class="powder1">论坛</span>
+        <span class="exchange" style="cursor: pointer;">版块
+            <div class="powder4" style="z-index: 10">
+                <div><span>官方专区：TCL动态&nbsp;&nbsp;|&nbsp;&nbsp;铁粉活动&nbsp;&nbsp;|&nbsp;&nbsp;同城会</span></div>
+                <div><span>电视：玩机评测&nbsp;&nbsp;|&nbsp;&nbsp;APP下载&nbsp;&nbsp;|&nbsp;&nbsp;固件升级&nbsp;&nbsp;|&nbsp;&nbsp;问题反馈&nbsp;&nbsp;|&nbsp;&nbsp;AI魔术师&nbsp;&nbsp;|&nbsp;&nbsp;VIP服务&nbsp;&nbsp;|&nbsp;&nbsp;电视内测组</span></div>
+                <div><span>其他产品：冰箱洗衣机 &nbsp;&nbsp;|&nbsp;&nbsp;空调&nbsp;&nbsp;|&nbsp;&nbsp; 手机&nbsp;&nbsp;|&nbsp;&nbsp;雷鸟电视&nbsp;&nbsp;|&nbsp;&nbsp;智能产品&nbsp;&nbsp;|&nbsp;&nbsp;LED照明</span></div>
+                <div><span>铁粉交流区：铁粉杂谈&nbsp;&nbsp;|&nbsp;&nbsp;随手拍</span></div>
+                <div>服务大厅：站务公告&nbsp;&nbsp;|&nbsp;&nbsp;反馈建议&nbsp;&nbsp;|&nbsp;&nbsp;TCL微分销</div>
+            </div>
+        </span>
+        <span class="powder1">服务
+            <div class="powder3" style="z-index: 12">
+                <div><span>系统升级</span></div>
+                <div><span>软件下载</span></div>
+            </div>
+        </span>
+        <a href="/duihuan"><span class="powder1">兑换</span></a>
+        <div class="powder2">
+        <a href="/userexpIndex"><span class="powder1">用户体验中心</span></a>
+        </div>
+        <input type="text"  id="ipt" value="" placeholder="请输入搜索内容">
+    </div>
+
+      <div class="blank"></div>
+     <!--轮播图-->
+     <div class="bigimage">
+            <div class="wrap">
+            <img class="show"  src="/image/1.jpg" alt="">
+            <img  class="show"  src="/image/2.jpg" alt="">
+            <!-- <img  class="show" src="/image/3.jpg" alt=""> -->
+            <!-- <img class="show" src="/image/12.jpg" alt=""> -->
+            <!-- <img class="show" src="/image/13.jpg" alt=""> -->
+            <!-- <img class="show" src="/image/7.jpg"  alt=""> -->
+            </div> 
+            <ul class="clear dot">
+                <li class="li"></li>
+                <li class="li"></li>
+            </ul>
+                <!-- <button id="prve"> <i class="fa fa-angle-left fa-3x"></i></button>    -->
+                <!-- <button id="next"><i class="fa fa-angle-right fa-3x"></i> </button>       -->
+    </div>  
+    <div class="every">
+        <div class="week">
+           <img src="/image/6.png" alt="">
+        </div>
+        <div class="right">
+            <div class="top">
+                <div>
+                    <img src="/image/8.png" alt="">
+                    <p>新手入门</p>
+                </div>
+                <div>
+                        <img src="/image/9.png" alt="">
+                        <p>积分任务</p>
+                </div>
+                <div>
+                        <img src="/image/10.png" alt="">
+                        <p>活动中心</p>
+                </div>
+                <div>
+                        <img src="/image/11.png" alt="">
+                        <p>会员权益</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="bottom-left">
+                     <p class="sign">已有  14817  人签到</p>
+                     <p class="continuity">连续签到 积分翻倍</p>
+                </div>
+                <div class="bottom-right">
+                    <img src="/image/13.png" alt="">
+                    <span class="sign1">签到</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="task">
+         <img src="/image/15.png" alt="">
+         <span class="task1">做任务 赢更多积分</span>
+         <span class="task2">你还有任务待完成</span>
+         <span class="task3"><i class="fa fa-angle-right"></i></span>
+    </div>
+
+    <div class="national">
+        <div class="national-left">
+                <img class="national4"  src="/image/3.jpg" alt="">
+                <p class="national1">国庆宠粉 豪礼送不停</p>
+                 <span class="iron">铁粉活动</span>
+                 <span class="national2">| &nbsp;&nbsp;&nbsp;&nbsp;2019-9-30 13:16</span>
+                 <p class="national3">喜迎国庆为回馈各位铁粉，多个平台都准备了惊喜 有奖活动还等什么,一起来参与吧</p>
+                 <img  class="national5"  src="/image/16.png" alt="">
+                 <img class="national6"  src="/image/17.png"  alt="">
+        </div>
+         <div class="national-right">
+               <div class="national7"> <span> TCL快报</span></div>
+               <div class="national8"> <span class="new">【最新】</span> &nbsp;&nbsp;&nbsp; <span>TCL全球化的机密</span></div>
+               <div class="national9"> <span class="new">【IFA】</span> &nbsp;&nbsp;&nbsp;&nbsp;<span>TCL冰箱洗衣机 斩获双奖</span>  </div>
+               <div class="national9">  <span  class="new"> 【最新】 </span> <span>  &nbsp;&nbsp;&nbsp;&nbsp;TCL通讯自研之局</span>  </div>
+               <div class="national9">  <span> 【最新】&nbsp;&nbsp;&nbsp;&nbsp; TCL冰箱洗衣机 斩获双奖</span>  </div>
+               <div class="national9">  <span> 【最新】&nbsp;&nbsp;&nbsp;&nbsp;  李先生谈TCL专利申请量</span>  </div>
+               <div class="national9">  <span> 【最新】&nbsp;&nbsp;&nbsp;&nbsp;  TCL专利申请书 </span>  </div>
+               <div class="national9">  <span> 【最新】&nbsp;&nbsp;&nbsp;&nbsp;  TCL分享家计划 </span>  </div>
+               <div class="national9">  <span> 【最新】&nbsp;&nbsp;&nbsp;&nbsp;   肖战代言TCL空调 </span>  </div>
+               <div class="national9">  <span> 【最新】&nbsp;&nbsp;&nbsp;&nbsp;   王一博代言TCL冰箱 </span>  </div>
+               <div class="national9">  <span> 【最新】&nbsp;&nbsp;&nbsp;&nbsp;   鹿晗代言TCL电视 </span>  </div>
+         </div>
+    </div>
+     
+<div class="firstpage  active">
+    
+    <div class="cleaning">
+        <div class="cleaning1">
+                <img class="national4"  src="/image/18.jpg" alt="">
+                <p class="national1">是时候给你的家电来一次大扫除</p>
+                 <span class="iron">铁粉活动</span>
+                 <span class="national2">| &nbsp;&nbsp;&nbsp;&nbsp;2019-9-30 13:16</span>
+                 <p class="national3">有的细菌隐藏在我们难以发现的地方,今天就让我们一起来探寻这些细菌的藏身之处，把他们通通消灭光！</p>
+                 <img  class="national5"  src="/image/16.png" alt="">
+                 <img class="national6"  src="/image/17.png"  alt="">
+        </div>
+        <div class="cleaning2">
+            <p>热门兑换</p>
+            <img src="/image/19.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="share">
+        <div class="share1">
+                <img class="national4"  src="/image/20.jpg" alt="">
+                <p class="national1">活动 | 分享你的煲剧清单</p>
+                 <span class="iron">铁粉活动</span>
+                 <span class="national2">| &nbsp;&nbsp;&nbsp;&nbsp;2019-9-30 13:16</span>
+                 <p class="national3"> 天气依然没有变凉爽，这样的天气最适合开着空调躲在被窝里追剧啦！快来安利一波要追起来的好剧吧！</p>
+                 <img  class="national5"  src="/image/16.png" alt="">
+                 <img class="national6"  src="/image/17.png"  alt="">
+        </div>
+        <div class="cleaning2">
+                <p>新品推荐</p>
+                <img src="/image/21.jpg" alt="">
+
+        </div>
+    </div>
+
+
+    <div class="share">
+            <div class="share1">
+                    <img class="national4"  src="/image/22.jpg" alt="">
+                    <p class="national1">夏日大作战 | 晒晒你家的避暑神器</p>
+                     <span class="iron">铁粉活动</span>
+                     <span class="national2">| &nbsp;&nbsp;&nbsp;&nbsp;2019-9-30 13:16</span>
+                     <p class="national3"> 扇子、电扇、空调……夏日避暑神器你在用哪个？</p>
+                     <img  class="national5"  src="/image/16.png" alt="">
+                     <img class="national6"  src="/image/17.png"  alt="">
+            </div>
+            <div class="cleaning2">
+                    <p>新品推荐</p>
+                    <img src="/image/23.jpg" alt="">
+            </div>
+    </div>
+
+
+    <div class="share">
+            <div class="share1">
+                    <img class="national4"  src="/image/25.jpg" alt="">
+                    <p class="national1">洗衣机怎么挑</p>
+                     <span class="iron">铁粉活动</span>
+                     <span class="national2">| &nbsp;&nbsp;&nbsp;&nbsp;2019-9-30 13:16</span>
+                     <p class="national3"> 挑选洗衣机也是一项大学问。那么滚筒洗衣机和波轮洗衣机之间有什么区别呢？</p>
+                     <img  class="national5"  src="/image/16.png" alt="">
+                     <img class="national6"  src="/image/17.png"  alt="">
+            </div>
+            <div class="share2">
+                    <p>热门兑换</p>
+                    <img src="/image/21.jpg" alt="">
+            </div>
+    </div>
+</div>  
+    
+
+  
+
+    <!--底部-->
+    <div class="community">
+           <div class="community1">
+               <div class="community3">
+               <span class="nav1">社区导航 </span>
+               <span class="nav2"> | 官方专区 |  铁粉交流区 | 产品交流区 | 服务大厅 | 网站地图</span> 
+               <br/>
+               <p class="friendship">     友情链接 &nbsp;&nbsp;TCL集团官网  &nbsp;&nbsp; 西子湖畔 &nbsp;&nbsp;  欢社区 &nbsp;&nbsp; ZOL论坛 &nbsp;&nbsp;  太平洋电脑网  &nbsp;&nbsp;  MTK手机网 &nbsp;&nbsp;移动叔叔 &nbsp;&nbsp;奇珀市场</p>
+               <p class="friendship">慕课网 &nbsp;&nbsp;中国家电网论坛&nbsp;&nbsp; 智能电视论坛&nbsp;&nbsp; 系统之家 &nbsp;&nbsp;极米社区&nbsp;&nbsp;高清范&nbsp;&nbsp;智能电视&nbsp;&nbsp;资讯乐迷社区</p>
+               <p class="friendship">
+                 家电维修论坛 &nbsp;&nbsp; 光通讯 &nbsp;&nbsp;欢视网 &nbsp;&nbsp;电视软件下载 &nbsp;&nbsp;花火网  &nbsp;&nbsp;vr虚拟现实 &nbsp;&nbsp;申请友链投影网</p>
+                <br>
+              
+                </div>
+               <div class="community4">
+                    <img class="wechat"   src="/image/26.png" alt="">
+                     <p>在线咨询：4008-123456</p>
+               </div>
+            </div>
+           <div class="community2">
+               <p>©2010-2019 TCL CORPORATION ALL RIGHTS RESERVED.  TCL集团股份有限公司版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;粤公网安备 44130202000455号&nbsp;&nbsp;粤ICP备05040863号</p> 
+           </div>
+    </div>
+
+
+    <div class="scroll">
+            <img src="/image/top.png" alt="">
+    </div>
+
+    <div class="aside">
+        <div>
+            <img src="/image/52.png" alt="">
+        </div>
+        <div>
+                <img src="/image/53.png" alt="">
+        </div>
+        <div>
+                <img src="/image/54.png" alt="">
+        </div>
+        <div>
+                <img src="/image/55.png" alt="">
+        </div>
+        <div>
+                <img src="/image/56.png" alt="">
+                <div class="aside1">
+                    <img src="/image/57.png" alt="">
+                </div>
+        </div>
+    </div>
+</body>
+
+<script>
+//轮播图 
+    var liElems=document.getElementsByClassName('li')
+    var div=document.getElementsByClassName('bigimage')[0]
+    var imgs=document.getElementsByClassName('show')
+    var prve=document.getElementById('prve')
+    var next=document.getElementById('next')
+    var num=0;
+    
+    for (var i=0;i<liElems.length;i++){
+        liElems[i].index=i
+        liElems[i].onclick=function(){
+        imgs[num].style.display='none'
+        liElems[num].style.background='#fff'
+        imgs[this.index].style.display='inline-block'
+        this.style.background='pink'
+        num=this.index
+        }
+    }
+        var timer
+        function timerleave(){
+            timer=setInterval(function(){
+                nextImage()
+            },1000)
+        }
+        //鼠标移上去，图片暂停
+            div.onmouseover=function(){
+                clearInterval(timer)
+            }
+            div.onmouseleave=function(){
+                timerleave()
+            }
+            prve.onclick=function(){
+            imgs[num].style.display='none'
+        liElems[num].style.background='#fff'
+        num--
+        if(num<0){
+            num=imgs.length-1
+        }
+            imgs[num].style.display='inline-block'
+            liElems[num].style.background='pink'
+        
+    }
+    function nextImage(){
+        imgs[num].style.display='none'
+        liElems[num].style.background='#fff'
+        num++
+        if(num>imgs.length-1){
+            num=0
+        }
+        imgs[num].style.display='inline-block'
+        liElems[num].style.background='pink'
+        
+    }
+    next.onclick=function(){
+        nextImage()
+    }
+
+
+     // 获取置顶对象
+     var arrow= document.getElementsByClassName("scroll")[0];
+        window.onscroll=function(){
+        if(window.scrollY>360){
+           arrow.style.display="block"
+        }else{
+           arrow.style.display="none"
+        }
+       arrow.onclick = function(){
+       window.scrollTo(0, 0);
+       }
+    }
+</script>
+</html>

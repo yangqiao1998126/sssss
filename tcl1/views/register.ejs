@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register</title>
+  <style>
+    *{
+      padding:0;
+      margin:0;
+    }
+    .err{
+      color: red;
+      font-size: 10px;
+      position: relative;
+      left:80px;
+
+    }
+    .box-top{
+      width:1278px;
+      height:85px;
+      /* border:yellow solid 1px; */
+    }
+    .logo{
+      width:70px;
+      height:44px;
+      margin-left:135px;
+      margin-top:20px;
+    }
+    .tcl{
+      display:block;
+      margin-left:225px;
+      margin-top:-48px;
+      font-size:32px;
+    }
+    .box{
+      width:100%;
+      height:600px;
+      /* border:tomato 1px solid; */
+      position: relative;
+      margin: 0 auto;
+    }
+    .box img{
+      width:100%;
+      height:100%;
+    }
+    .box1{
+      width:430px;
+      height:480px;
+      border:solid 1px white;
+      position: absolute;
+      background: #ccc;
+      top:110px;
+      right: 150px;
+      padding-left: 15px;
+    }
+    .box1 p{
+      margin-left:30px;
+      margin-top:25px;
+    }
+    #user,#pwd{
+      width:300px;
+      height:33px;
+      margin-top:40px;
+      margin-left:10px;
+    }
+    button{
+      width:200px;
+      height:33px;
+      margin-top:40px;
+      color:red;
+      border:none;
+      border:red 1px solid;
+      background:white;
+      font-size:18px;
+      margin-left:48px;
+    }
+    button:hover{
+      cursor: pointer;
+      background:red;
+      color:white
+    }
+  </style>
+</head>
+<body>
+<div class="box-top">
+  <img class="logo" src="/images/logo.png">
+  <span class="tcl">TCL账号注册</span>
+</div>
+<div class="box">
+  <img src="/images/back.jpg">
+</div>
+<div class="box1">
+<!--  <p>注册TCL账号</p>-->
+<!--  &nbsp;&nbsp;&nbsp;&nbsp;账号:-->
+<!--  <input type="text" id="user"><br/>-->
+<!--  &nbsp;&nbsp;&nbsp;&nbsp;密码:-->
+<!--  <input type="password" id="pwd">-->
+<!--  <button id="register">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</button>-->
+
+  <span class="err"><span class="err"><%=errMsg.networkErr%></span></span>
+
+  <form action="http://localhost:3000/register" method="post">
+
+    邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：<input type="email" id="user" name="email"><br><span class="err"><%=errMsg.emailErr%></span><br>
+    昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" id="user" name="nick_name"><br><span class="err"><%=errMsg.nickNameErr%></span><br>
+    密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" id="pwd" name="password"><br><span class="err"><%=errMsg.passwordErr%></span><br>
+    确认密码:&nbsp;<input type="password" id="pwd" name="re_password"><br><span class="err"><%=errMsg.rePasswordErr%></span><br><br>
+    <input style="width: 300px;height:33px;background: #d83832;color: white;position: relative;left:80px " type="submit" value="点击注册">
+    <a style="font-size: 12px;position: relative;left:95px ;display: block" href="/login">已有账号，点击进入登录界面</a>
+
+  </form>
+</div>
+
+</body>
+</html>

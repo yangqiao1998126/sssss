@@ -1,0 +1,792 @@
+
+<% if(a != '0' && a!= undefined){%>
+    <% include loginNav.ejs%>
+<%}else {%>
+    <% include NoLoginNav.ejs%>
+<%}%>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户体验中心</title>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+    }
+
+
+    .powder{
+          width:100%;
+          height:80px;
+          border-bottom:1px solid #ccc;
+    }
+    .powder img{
+       margin-left: 38px;
+       margin-top: 12px;
+       float:left;
+    }
+    .powder1{
+        font-size:14px;
+        float:left;
+        color: #555555;
+        display: inline-block;
+        line-height: 80px;
+        text-decoration: none;
+        margin: 0 10px;
+        padding: 0 5px;
+
+    }
+    .exchange{
+        font-size:14px;
+        float:left;
+        color: #555555;
+        display: inline-block;
+        line-height: 80px;
+        text-decoration: none;
+        margin: 0 10px;
+        padding: 0 5px;
+    }
+
+    .powder2{
+         width:120px;
+         height:77px;
+         float:left;
+         border-bottom:4px solid #FF0000;
+         text-align: center;
+    }
+    .powder3{
+        width:120px;
+        height: 100px;
+        border:1px solid rgb(233, 230, 230);
+        display:none;
+        position:absolute;
+        left:400px;
+        text-align:center;
+    }
+    .powder3 div{
+        width:120px;
+        height: 50px;
+        line-height: 50px;
+        float:left;
+    }
+    .powder1:hover div{
+        display:block;
+    }
+    .powder4{
+        width:1000px;
+        height: 300px;
+        border:1px solid rgb(233, 230, 230);
+        display:none;
+        position:absolute;
+        margin-left:-300px;
+        background:#fff;
+
+    }
+    .powder4 div{
+        width:1000px;
+        height:60px;
+        float: left;
+        margin-left: 250px;
+        color:#999;
+    }
+    .exchange:hover div{
+        display:block;
+    }
+   #ipt{
+     width: 140px;
+     height: 28px;
+     float: left;
+     text-indent: 8px;
+     border:1px solid #ccc;
+     margin-left: 500px;
+     margin-top: 30px;
+     outline: none;
+   }
+   .self p{
+       font-size:22px;
+       color:#333;
+       margin-left: 40px;
+       margin-top: 40px;
+   }
+   .self2{
+       width:1280px;
+       height: 300px;
+       margin: 0 auto;
+       margin-top: 30px;
+       border:1px solid #ccc;
+   }
+   .self3{
+      float:left;
+      width:1280px;
+      height: 150px;
+      /* background: cornflowerblue; */
+      text-align:center;
+   }
+   .self3 div{
+       width:319px;
+       height: 148px;
+       float:left;
+       border-bottom:1px solid #ccc;
+       border-right:1px solid #ccc;
+   }
+   .self3 p{
+       margin-top: 30px;
+       font-size:18px;
+   }
+   .self3 img{
+       margin-top:10px;
+
+   }
+   .self4{
+    float:left;
+      width:1280px;
+      height: 150px;
+      text-align:center;
+
+   }
+   .self4 div{
+       width:319px;
+       height: 148px;
+       float:left;
+       border-right:1px solid #ccc;
+   }
+   .self4 p{
+       margin-top: 30px;
+       font-size:18px;
+   }
+   .experience{
+       margin-top: 30px;
+        width:100%;
+        height:800px;
+        background:#F2F2F2;
+   }
+   .blank{
+       width:100%;
+       height:40px;
+   }
+   .experience1{
+       margin-top: 30px;
+       width:1280px;
+       height: 220px;
+       /* background:#fff; */
+       margin:0 auto;
+   }
+   .experience2{
+       width:635px;
+       float:left;
+       margin-left: 40px;
+   }
+   .experience3{
+       float:left;
+       width:605px;
+   }
+   .experience4{
+       position: relative;
+   }
+   .over{
+       position: absolute;
+       right: 55px;
+       top:690px;
+       font-size:18px;
+       color:#fff;
+       background: #999999;
+       width:85px;
+       height: 35px;
+       line-height: 35px;
+       border-radius: 60px  0  0 60px;
+       text-align: center;
+    }
+    .city{
+       position: absolute;
+       right: 155px;
+       top:760px;
+       font-size:18px;
+       color:#fff;
+       line-height: 35px;
+       border-radius: 60px  0  0 60px;
+       text-align: center;
+    }
+    .title-s{
+       position: absolute;
+       right: 135px;
+       top:780px;
+       font-size:14px;
+       color:#fff;
+       line-height: 35px;
+       border-radius: 60px  0  0 60px;
+       text-align: center;
+    }
+    .shopping1{
+        width:1285px;
+        height: 400px;
+        margin:0 auto;
+        margin-top: 20px;
+    }
+    .shopping1 div{
+        width:316px;
+        height: 350px;
+        background: #fff;
+        margin-right: 5px;
+        float:left;
+    }
+    .shopping1 div p{
+        margin-left: 35px;
+        margin-top: 20px;
+        font-size:14px;
+        color:#666;
+    }
+    .shopping1 div p:hover{
+        color:#ff0000;
+    }
+    .shop2{
+           font-size:18px;
+           color:#000;
+           margin-top: 120px;
+           margin-left: 35px;
+    }
+    .shop3{
+        font-size:14px;
+        color:#ff0000;
+    }
+    .essence{
+        width:1280px;
+        height: 604px;
+        border:1px solid #ccc;
+        margin:0 auto;
+        margin-top: 30px;
+    }
+    .essence3{
+        width:820px;
+        height: 600px;
+        float:left;
+    }
+    .essence5{
+        width:820px;
+        height: 200px;
+        border-bottom:1px solid #ccc;
+        border-right:1px solid #ccc;
+        float:left;
+    }
+    .essence3 span{
+          margin-left: 40px;
+          color:#666;
+          margin-top: 20px;
+          float:left;
+    }
+    .forward{
+        margin-left: 300px;
+        float:left;
+    }
+    .forward1{
+        width:820px;
+        height: 200px;
+        float:left;
+        margin-left: 44px;
+
+    }
+    .forward2{
+        width:220px;
+        height:135px;
+        float:left;
+    }
+    .essence1{
+          margin-left: 40px;
+          font-size:25px;
+    }
+    .essence2{
+        margin-left: 1000px;
+        font-size:14px;
+        color:#ff0000;
+    }
+    .essence4{
+        width:400px;
+        height: 600px;
+        float:left;
+    }
+    .essence4 div{
+        float:left;
+        width:460px;
+        height: 300px;
+        border-bottom:1px solid #ccc;
+        text-align: center;
+    }
+     .essence4 div img{
+         width:340px;
+         height: 130px;
+         margin-top: 40px;
+    }
+    .essence4 div p{
+        font-size: 17px;
+        color:#000;
+        margin-top: 10px;
+    }
+    .essence4 div span{
+        width: 150px;
+      height: 40px;
+      display: inline-block;
+      line-height: 40px;
+      border: 1px solid #ff0000;
+      color: #ff0000;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    .integral{
+        width:100%;
+        height: 135px;
+        line-height:135px;
+        background: #F2F2F2;
+        margin-top: 40px;
+        font-size:26px;
+        color: #333;
+
+    }
+    .integral p{
+        margin-left: 40px;
+    }
+    .earn{
+        width:1280px;
+        height: 280px;
+        margin:0 auto;
+    }
+
+    .earn1{
+         font-size:26px;
+         color: #333;
+         /* margin-left: 40px; */
+    }
+    .earn2{
+        width:1280px;
+        height: 280px;
+        float:left;
+    }
+    .earn3{
+        width:640px;
+        height: 140px;
+        border-right:1px solid #ccc;
+        float:left;
+    }
+    .earn2{
+        width:640px;
+        height:280px;
+        float:left;
+        /* background: #000; */
+    }
+    .earn4{
+        width:640px;
+        height:280px;
+        float:left;
+        /* background: #000; */
+    }
+    .earn3 img{
+        float:left;
+        margin-left:40px;
+    }
+    .molib{
+        float:left;
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size:18px;
+    }
+    .molib1{
+        float:left;
+        margin-top: 50px;
+        margin-left:-75px;
+        font-size:14px;
+        color:#999;
+    }
+    .molib2{
+        float:left;
+        font-size:18px;
+        color:#ff0000;
+        font-weight: 700;
+        margin-left: 210px;
+        margin-top: 20px;
+    }
+    .molib3{
+        float:left;
+        font-size:18px;
+        width:120px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border:1px solid #ff0000;
+        color:#ff0000;
+        margin-left: 260px;
+        margin-top:-30px;
+    }
+
+
+
+        .community{
+                width:100%;
+                height: 260px;
+                margin-top: 50px;
+            }
+            .community1{
+                width:100%;
+                height: 205px;
+                background:#262626;
+                float:left;
+            }
+            .community2{
+                width:100%;
+                height: 55px;
+                background:#191919;
+                float:left;
+            }
+            .community2 p{
+                color: #7e7e7e;
+                font-size:12px;
+                line-height: 55px;
+                margin-left: 150px;
+            }
+            .community3{
+                width:960px;
+                height: 205px;
+                float:left;
+            }
+            .community4{
+                width:350px;
+                height: 205px;
+                float:left;
+
+            }
+            .wechat{
+                float:left;
+            }
+            .community4 p{
+                font-size:14px;
+                color:#fff;
+                float:left;
+            }
+            .nav1{
+                font-size: 14px;
+                color: #7e7e7e;
+                font-weight: 600;
+                line-height: 20px;
+                float:left;
+                margin-left: 150px;
+                margin-top: 50px;
+            }
+            .nav2{
+               line-height: 20px;
+               display: block;
+               font-size: 14px;
+               float:left;
+                margin-left: 20px;
+                margin-top: 50px;
+                color: #b6b6b6;
+            }
+            .community img{
+                float:left;
+                margin-left: 220px;
+                margin-top: 30px;
+            }
+            .friendship{
+                font-size: 14px;
+                color: #b6b6b6;
+                /* font-weight: 600; */
+                line-height: 20px;
+                float:left;
+                margin-left: 150px;
+                margin-top: 10px;
+            }
+            .scroll{
+             position: fixed;
+             display: none;
+             right: 0px;
+             bottom: 50px;
+             cursor: pointer;
+             z-index: 1;
+         }
+         .scroll img{
+             width: 60px;
+             height: 60px;
+             background: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="powder">
+        <img src="/image/27.png" alt="">
+        <a href="/userexp"><span class="powder1">首页</span></a>
+        <span class="powder1">论坛</span>
+        <span class="exchange">版块
+                <div class="powder4">
+                        <div><span>官方专区：TCL动态&nbsp;&nbsp;|&nbsp;&nbsp;铁粉活动&nbsp;&nbsp;|&nbsp;&nbsp;同城会</span></div>
+                        <div><span>电视：玩机评测&nbsp;&nbsp;|&nbsp;&nbsp;APP下载&nbsp;&nbsp;|&nbsp;&nbsp;固件升级&nbsp;&nbsp;|&nbsp;&nbsp;问题反馈&nbsp;&nbsp;|&nbsp;&nbsp;AI魔术师&nbsp;&nbsp;|&nbsp;&nbsp;VIP服务&nbsp;&nbsp;|&nbsp;&nbsp;电视内测组</span></div>
+                        <div><span>其他产品：冰箱洗衣机 &nbsp;&nbsp;|&nbsp;&nbsp;空调&nbsp;&nbsp;|&nbsp;&nbsp; 手机&nbsp;&nbsp;|&nbsp;&nbsp;雷鸟电视&nbsp;&nbsp;|&nbsp;&nbsp;智能产品&nbsp;&nbsp;|&nbsp;&nbsp;LED照明</span></div>
+                        <div><span>铁粉交流区：铁粉杂谈&nbsp;&nbsp;|&nbsp;&nbsp;随手拍</span></div>
+                        <div>服务大厅：站务公告&nbsp;&nbsp;|&nbsp;&nbsp;反馈建议&nbsp;&nbsp;|&nbsp;&nbsp;TCL微分销</div>
+                </div>
+        </span>
+        <span class="powder1">服务
+            <div class="powder3">
+                <div><span>系统升级</span></div>
+                <div><span>软件下载</span></div>
+            </div>
+        </span>
+        <a href="/duihuan"><span class="powder1">兑换</span></a>
+        <div class="powder2">
+        <span class="powder1">用户体验中心</span>
+        </div>
+        <input type="text"  id="ipt" value="" placeholder="请输入搜索内容">
+    </div>
+
+    <div class="self">
+         <p class="self1">自助服务</p>
+    </div>
+    <div class="self2">
+        <div class="self3">
+            <div>
+                <p>我要维修</p>
+                <img src="/image/28.png" alt="">
+
+            </div>
+            <div>
+                    <p>我要安装 </p>
+                    <img src="../image/29.png" alt="">
+            </div>
+            <div>
+                    <p>服务政策 </p>
+                    <img src="/image/30.png" alt="">
+            </div>
+            <div>
+                    <p>我要安装 </p>
+                    <img src="/image/31.png" alt="">
+            </div>
+        </div>
+        <div class="self4">
+                <div>
+                        <p>服务进度 </p>
+                        <img src="/image/32.png" alt="">
+                </div>
+                <div>
+                        <p>自主检测</p>
+                        <img src="/image/33.png" alt="">
+                </div>
+                <div>
+                        <p>我要安装 </p>
+                      <img src="/image/34.png" alt="">
+                </div>
+                <div>
+                        <p>产品发票 </p>
+                        <img src="/image/35.png" alt="">
+                </div>
+        </div>
+    </div>
+
+    <div class="experience">
+        <div class="blank"></div>
+       <div class="self">
+         <p>体验与反馈</p>
+        </div>
+        <div class="blank"></div>
+        <div class="experience1">
+             <div class="experience3">
+                 <img src="/image/36.png" alt="">
+             </div>
+             <div class="experience2">
+                 <img  class="experience4" src="http://i0.fans.tcl.com/images/2017/10/2017102459ef04742cf30.png" alt="">
+                 <p class="over">已结束</p>
+                 <p class="city">惠州同城会</p>
+                 <p class="title-s">X6品鉴会活动回顾</p>
+             </div>
+        </div>
+        <div class="shopping1">
+                <div>
+                    <br>
+                   <span class="shop2"> 购物体验/人员反馈  &nbsp; &nbsp; &nbsp;</span>
+                  <span class="shop3">我的反馈</span>
+                   <p>营销宣传  </p>
+                    <p>服务和体验  </p>
+                    <p> 物流体验 </p>
+                    <p>发票与电子保单 </p>
+                    <p> 网站使用</p>
+                     <p>订单支付</p>
+                     <p>其他服务</p>
+        </div>
+                <div>
+                        <br>
+                    <span class="shop2">产品使用/售后反馈  &nbsp; &nbsp; &nbsp;</span>
+                    <span  class="shop3">我的反馈</span>
+                    <p>电视</p>
+                    <p>冰箱</p>
+                    <p>洗衣机</p>
+                    <p>空调</p>
+                    <p>手机</p>
+                    <p>健康电器</p>
+                    <p>其他服务</p>
+                </div>
+                <div>
+                        <br>
+                        <span class="shop2">体验优化日志</span>
+                        <p>关于电视颜色表现太差</p>
+                        <p>每次脱水时候，洗衣机晃动特</p>
+                        <p>观看在线影视出现卡顿、不流</p>
+                        <p>空调运行时会产生异味</p>
+                        <p>洗衣机中途停机</p>
+                        <p>健康电器</p>
+                        <p>查看更多 &gt;&gt;</p>
+                </div>
+                <div>
+                        <br>
+                        <span class="shop2">体验优化日志</span>
+                        <p>MS838C-P3-V058智能电视系</p>
+                        <p>MT5507智能电视系统软件更</p>
+                        <p>MS828 P1 智能电视系统软件</p>
+                        <p>MS828-70P1-V013智能电视</p>
+                        <p>MT5507-0323智能电视系统软</p>
+                        <p>MT5507-0323智能电视系统软件更新</p>
+                        <p>查看更多 &gt;&gt;</p>
+                </div>
+          </div>
+    </div>
+    <br>
+    <span class="essence1">社区精华</span> <span class="essence2" >查看更多&gt;</span>
+    <br>
+    <div class="essence">
+        <div class="essence3">
+
+            <div class="essence5">
+                <br>
+                <span>【铁粉期刊05期】寻找你身边的旅游达人</span>
+                <img  class="forward"   src="/image/37.png" alt="">
+                <div class="forward1" >
+                <img   class="forward2"  src="/image/37.jpg" alt="">
+                <img  class="forward2"   src="/image/38.jpg"   alt="">
+                </div>
+            </div>
+
+            <div class="essence5">
+                    <span>【赢积分活动】三伏天养生我知道[获奖名单]</span>
+                    <img  class="forward"   src="/image/37.png" alt="">
+                    <div class="forward1" >
+                    <img   class="forward2"  src="/image/39.jpg" alt="">
+                    <img  class="forward2"   src="/image/40.jpg"   alt="">
+                    <img  class="forward2"   src="/image/41.jpg"   alt="">
+                   </div>
+            </div>
+
+            <div class="essence5">
+                    <span>【赢积分活动】三伏天养生我知道[获奖名单]</span>
+                    <img  class="forward"   src="/image/37.png" alt="">
+                    <div class="forward1" >
+                    <img   class="forward2"  src="/image/42.jpg" alt="">
+                    <img  class="forward2"   src="/image/43.jpg"   alt="">
+                    <img  class="forward2"   src="/image/44.jpg"   alt="">
+                   </div>
+            </div>
+        </div>
+        <div class="essence4">
+            <div>
+                <img src="/image/45.jpg" alt="">
+                <p>【铁粉有的聊】手机只装5款APP，你装什么</p>
+                <span>立刻参与</span>
+            </div>
+            <div>
+                <img src="/image/44.jpg" alt="">
+                <p>【做活动赢大奖】扫一扫二维码立即行动</p>
+                <span>立刻参与</span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="integral">
+        <p>积分兑换</p>
+    </div>
+
+    <div class="earn">
+        <br>
+        <p class="earn1">赚取积分</p>
+        <br>
+        <div class="earn2">
+
+            <div class="earn3">
+                 <img src="/image/48.png" alt="">
+                 <span class="molib">验证手机</span>
+                 <span class="molib1"> 首次验证手机</span>
+                 <span class="molib2">+10</span>
+                 <span class="molib3">去绑定</span>
+             </div>
+
+             <div class="earn3">
+                    <img src="/image/49.png" alt="">
+                    <span class="molib">验证手机</span>
+                    <span class="molib1" > 首次验证手机</span>
+                    <span class="molib2">+10</span>
+                    <span class="molib3">去绑定</span>
+             </div>
+
+        </div>
+
+        <div class="earn4">
+                <div class="earn3">
+                        <img src="/image/50.png" alt="">
+                        <span class="molib">验证手机</span>
+                        <span class="molib1" > 首次验证手机</span>
+                        <span class="molib2">+10</span>
+                        <span class="molib3">去绑定</span>
+                </div>
+                <div class="earn3">
+                        <img src="/image/51.png" alt="">
+                        <span class="molib">验证手机</span>
+                        <span class="molib1" > 首次验证手机</span>
+                        <span class="molib2">+10</span>
+                        <span class="molib3">去绑定</span>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="community">
+            <div class="community1">
+                <div class="community3">
+                <span class="nav1">社区导航 </span>
+                <span class="nav2"> | 官方专区 |  铁粉交流区 | 产品交流区 | 服务大厅 | 网站地图</span>
+                <br/>
+                <p class="friendship">     友情链接 &nbsp;&nbsp;TCL集团官网  &nbsp;&nbsp; 西子湖畔 &nbsp;&nbsp;  欢社区 &nbsp;&nbsp; ZOL论坛 &nbsp;&nbsp;  太平洋电脑网  &nbsp;&nbsp;  MTK手机网 &nbsp;&nbsp;移动叔叔 &nbsp;&nbsp;奇珀市场</p>
+                <p class="friendship">慕课网 &nbsp;&nbsp;中国家电网论坛&nbsp;&nbsp; 智能电视论坛&nbsp;&nbsp; 系统之家 &nbsp;&nbsp;极米社区&nbsp;&nbsp;高清范&nbsp;&nbsp;智能电视&nbsp;&nbsp;资讯乐迷社区</p>
+                <p class="friendship">
+                  家电维修论坛 &nbsp;&nbsp; 光通讯 &nbsp;&nbsp;欢视网 &nbsp;&nbsp;电视软件下载 &nbsp;&nbsp;花火网  &nbsp;&nbsp;vr虚拟现实 &nbsp;&nbsp;申请友链投影网</p>
+                 <br>
+
+                 </div>
+                <div class="community4">
+                     <img class="wechat"   src="/image/26.png" alt="">
+                      <p>在线咨询：4008-123456</p>
+                </div>
+             </div>
+            <div class="community2">
+                <p>©2010-2019 TCL CORPORATION ALL RIGHTS RESERVED.  TCL集团股份有限公司版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;粤公网安备 44130202000455号&nbsp;&nbsp;粤ICP备05040863号</p>
+            </div>
+     </div>
+
+     <div class="scroll">
+            <img src="/image/top.png" alt="">
+    </div>
+</body>
+
+<script>
+    // 获取置顶对象
+    var arrow= document.getElementsByClassName("scroll")[0];
+        window.onscroll=function(){
+        if(window.scrollY>360){
+           arrow.style.display="block"
+        }else{
+           arrow.style.display="none"
+        }
+       arrow.onclick = function(){
+       window.scrollTo(0, 0);
+       }
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,241 @@
+
+<% if(a != '0' && a!= undefined){%>
+    <% include loginNav.ejs%>
+<%}else {%>
+    <% include NoLoginNav.ejs%>
+<%}%>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        list-style:none;
+    }
+    .clear::after{
+        content:'';
+        display:block;
+        clear:both;
+    }
+    .box_img{
+        width:91%;
+        height:425px;
+        /* background: pink; */
+        margin:0 auto;
+        position: relative;
+        cursor: pointer;
+        /* display: none; */
+    }
+    .dot{
+        position: absolute;
+        left:50%;
+        bottom:20px;
+        cursor: pointer;
+    }
+    .dot1{
+        width:12px;
+        height:12px;
+        background: #fff;
+        margin-left: 10px;
+        float:left;
+        border-radius: 12px;
+    }
+    .exchange{
+        width:100%;
+        margin-top:6.5%;
+        padding-bottom: 6.5%;
+        background: #f5f1f1;
+    }
+    .like{
+        width:91%;
+        /* background: burlywood; */
+        margin: 0 auto;
+    }
+    .exchange_img{
+        width:91%;
+        height:375px;
+        margin: 4% auto 0;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .exchange_img div{
+        width:24.1%;
+        height:375px;
+        background: white;
+    }
+    .integral-nav{
+        width:100%;
+        height:60px;
+        background: #fff;
+        border-bottom:1px solid #eee;
+        position: relative;
+    }
+    .integral-title{
+        float:left;
+    }
+    .integral-title li{
+        width:65px;
+        height:100%;
+        /* background: lightcoral; */
+        float: left;
+        margin-left: 25px;
+        color:#333;
+        font-size: 14px;
+        line-height:60px;
+        text-align: center;
+    }
+    .integral-title li:hover{
+        cursor:pointer;
+        color:#ff4526;
+    }
+    .integral_search{
+        outline: none;
+        width:200px;
+        height:35px;
+        border:1px solid #efefef;
+        padding-left: 10px;
+        float:right;
+        margin-right:60px;
+        margin-top:13px;
+    }
+    .search_circle{
+        width:26px;
+        height:26px;
+        background: rgb(226, 226, 226);
+        border-radius:50%;
+        position:absolute;
+        right:68px;
+        top:19px;
+        cursor: pointer;
+    }
+</style>
+<!-- 积分商城的导航 -->
+<div class="integral-nav clear">
+    <img width="6%" style="margin-left: 60px;margin-top: 5.6px;float: left;" src="/images/logo.png" alt="">
+    <ul class="integral-title clear">
+        <li style="margin-left: 60px;color:#ff4526;border-bottom:solid 2.5px red">首页</li>
+        <li>铁粉权益</li>
+        <a href=""><li>积分抽奖</li></a>
+        <li>铁粉社区</li>
+        <a href="/question"><li>问题咨询</li></a>
+        <% if(a != '0' && a!= undefined){%>
+            <a href="/loginidx"><li>TCL官网</li></a>
+        <%}else {%>
+            <a href="/"><li>TCL官网</li></a>
+        <%}%>
+
+    </ul>
+    <input class="integral_search" type="text" placeholder="商品关键字">
+    <div class="search_circle">
+        <i style="line-height: 25px;margin-left: 5px;color:#999" class="fa fa-search"></i>
+    </div>
+</div>
+<!-- 轮播图 -->
+<div class="box_img">
+    <img class="lunbo_img" style="width:100%" src="http://i0.hy.tcl.com/image/2019/09/default/201909275d8d81e62a328.jpg" alt="">
+    <img class="lunbo_img" style="display: none;width:100%" src="http://i0.hy.tcl.com/image/2019/10/default/201910225daeee6ce6a12.jpg" alt="">
+    <ul class="dot">
+        <li class="dot1" style="background:rgb(103, 103, 236);"></li>
+        <li class="dot1"></li>
+    </ul>
+</div>
+<!-- 积分兑换 -->
+<div class="exchange">
+    <!-- 兑你喜欢 -->
+    <div class="like clear">
+        <span style="font-size:22px;color:#333;float:left;margin-top: 45px;">兑你喜欢</span>
+        <a style="float:right;font-size:14px;color:#666;cursor: pointer;margin-top:45px">查看更多></a>
+    </div>
+    <div class="exchange_img">
+        <% for(var i=0;i<mall1.length;i++){ %>
+        <div class="exchange_img1" style="text-align: center;">
+            <img width="73%" style="margin-top: 35px;" src="<%= mall1[i].src%>" alt="">
+            <p style="font-size :16px;color: #333333;"><%= mall1[i].title%></p>
+            <p style="font-size: 16px;color:#ff0000;margin-top: 25px;"><%= mall1[i].num%>积分</p>
+        </div>
+        <%}%>
+    </div>
+    <!-- 积分兑钱 -->
+    <div class="like clear">
+        <span style="font-size:22px;color:#333;float:left;margin-top: 45px;">积分兑钱</span>
+        <a style="float:right;font-size:14px;color:#666;cursor: pointer;margin-top: 45px;">查看更多></a>
+    </div>
+    <div class="exchange_img">
+        <% for(var i=0;i<mall2.length;i++){ %>
+        <div class="exchange_img1" style="text-align: center;">
+            <img width="73%" style="margin-top: 35px;" src="<%= mall2[i].src%>" alt="">
+            <p style="font-size :16px;color: #333333;"><%= mall2[i].title%></p>
+            <p style="font-size :16px;color:#ff0000;margin-top: 25px;"><%= mall2[i].num%>积分</p>
+        </div>
+        <%}%>
+    </div>
+    <!-- 家用电器 -->
+    <div class="like clear">
+        <span style="font-size:22px;color:#333;float:left;margin-top: 45px;">家用电器</span>
+        <a style="float:right;font-size:14px;color:#666;cursor: pointer;margin-top: 45px;">查看更多></a>
+    </div>
+    <div class="exchange_img">
+        <% for(var i=0;i<mall3.length;i++){ %>
+        <div class="exchange_img1" style="text-align: center;">
+            <img width="73%" style="margin-top: 35px;" src="<%= mall3[i].src%>" alt="">
+            <p style="font-size :16px;color: #333333;"><%= mall3[i].title%></p>
+            <p style="font-size:16px;color:#ff0000;margin-top: 25px;"><%= mall3[i].num%>积分</p>
+        </div>
+        <%}%>
+    </div>
+    <!-- 虚拟商品 -->
+    <div class="like clear">
+        <span style="font-size:22px;color:#333;float:left;margin-top: 45px;">虚拟商品</span>
+        <a style="float:right;font-size:14px;color:#666;cursor: pointer;margin-top: 45px;">查看更多></a>
+    </div>
+    <div class="exchange_img">
+        <% for(var i=0;i<mall4.length;i++){ %>
+        <div class="exchange_img1" style="text-align: center;">
+            <img width="73%" style="margin-top: 35px;" src="<%= mall4[i].src%>" alt="">
+            <p style="font-size:16px;color: #333333;"><%= mall4[i].title%></p>
+            <p style="font-size: 16px;color:#ff0000;margin-top: 25px;"><%= mall4[i].num%>积分</p>
+        </div>
+        <%}%>
+    </div>
+</div>
+
+<script>
+    // 轮播图
+    var lunbo_img=document.querySelectorAll('.lunbo_img')
+    var dot1=document.querySelectorAll('.dot1')
+    var box_img=document.querySelector('.box_img')
+    var num1=0
+    for(var i=0;i<dot1.length;i++){
+        dot1[i].index=i
+        dot1[i].onmouseover=function(){
+            lunbo_img[num1].style.display='none'
+            dot1[num1].style.background='#fff'
+            lunbo_img[this.index].style.display='inline-block'
+            this.style.background='rgb(103, 103, 236)'
+            num1=this.index
+        }
+    }
+    var timer;
+    function timefn(){
+        timer=setInterval(function(){
+            lunbo_img[num1].style.display='none'
+            dot1[num1].style.background='#fff'
+            num1++
+            if(num1>1){
+                num1=0
+            }
+            lunbo_img[num1].style.display='inline-block'
+            dot1[num1].style.background='rgb(103, 103, 236)'
+        },3000)
+    }
+    timefn()
+    box_img.onmouseover=function(){
+        clearInterval(timer)
+    }
+    box_img.onmouseleave=function(){
+        timefn()
+    }
+</script>
+<% include base/bottom.ejs %>
+<% include base/foot.ejs %>

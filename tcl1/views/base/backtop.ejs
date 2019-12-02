@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .zhiding_server,.back{
+            width:50px;
+            height:50px;
+            background: #FFF;
+            border:1px solid #ededed;
+            color:#979797;
+        }
+        .zhiding_server:hover,.back:hover{
+            cursor: pointer;
+            color:red;
+        }
+        .zhiding{
+            position: fixed;
+            right:20px;
+            top:400px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="zhiding">
+        <div class="zhiding_server" style="text-align: center;">
+            <i style="font-size:22px;margin-top: 6px;" class="fa fa-headphones"></i>
+            <p style="font-size:12px;">客服</p>
+        </div>
+        <div class="back" style="text-align: center;">
+            <i style="font-size:26px;margin-top:2px;" class="fa fa-angle-up"></i>
+            <p style="font-size:12px;">顶部</p>
+        </div>
+    </div>
+    <script>
+        var back=document.querySelector('.back')
+        back.onclick=function(e){
+            window.scrollTo(0,0)
+        } 
+    </script>
+</body>
+</html>

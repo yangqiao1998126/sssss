@@ -1,0 +1,522 @@
+<link rel="stylesheet" href="/css/first.css">
+<link rel="stylesheet" href=" /css/font-awesome.css">
+
+<!-- 轮播图 -->
+<div class="lunbo">
+    <img class="show" width="100%" style="height: 480px;" src="/images/z-lun1.jpg" alt="">
+    <img class="show" width="100%" style="height: 480px;display: none;" src="/images/z-lun2.jpg" alt="">
+    <img class="show" width="100%" style="height: 480px;display: none;" src="/images/z-lun3.jpg" alt="">
+    <div class="menu">
+        <ul class="menu-content">
+            <li><span class="menuair " >空调爆款</span>
+                <i class="fa fa-angle-right"></i>
+                <div class="menu-hidden">
+                    <div class="air">
+                        <% for(var i=0;i<e.length;i++){ %>
+                        <div class="air1 faddish" id="<%= e[i].biaoshi%>">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 6px;" src="<%= e[i].src%>" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="air_desc"><%= e[i].title%></p>
+                                <p class="price"><%= e[i].price%>.00 元</p>
+                            </div>
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+            </li>
+            <li><span class="menuair ">热销电视</span>
+                <i class="fa fa-angle-right"></i>
+                <div class="menu-hidden">
+                    <div class="air">
+                        <% for(var i=0;i<f.length;i++){ %>
+                        <div class="air1 faddish" id="<%= f[i].biaoshi%>">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top:8px;" src="<%= f[i].src%>" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc" style="margin-top:55px;"><%= f[i].title%></p>
+                                <p class="price"><%= f[i].price%>.00 元</p>
+                            </div>
+                        </div>
+                        <%}%>
+                        <!-- <div class="air1"></div> -->
+                    </div>
+                    <!-- <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div>
+                    <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div> -->
+                </div>
+            </li>
+            <li><span class="menuair">人气冰箱</span>
+                <i class="fa fa-angle-right"></i>
+                <div class="menu-hidden">
+                    <div class="air">
+                        <% for(var i=0;i<g.length;i++){ %>
+                        <div class="air1 faddish" id="<%= g[i].biaoshi%>">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 10px;" src="<%= g[i].src%>" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc"><%= g[i].title%></p>
+                                <p class="price"><%= g[i].price%>.00 元</p>
+                            </div>
+                        </div>
+                        <%}%>
+                        <!-- <div class="air1"></div> -->
+                    </div>
+                    <!-- <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div>
+                    <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div> -->
+                </div>
+            </li>
+            <li><span class="menuair">品质洗衣机</span>
+                <i class="fa fa-angle-right"></i>
+                <div class="menu-hidden">
+                    <div class="air">
+                        <% for(var i=0;i<h.length;i++){ %>
+                        <div class="air1 faddish" id="<%= h[i].biaoshi%>">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 10px;" src="<%= h[i].src%>" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc" style="margin-top:55px;"><%= h[i].title%></p>
+                                <p class="price"><%= h[i].price%>.00 元</p>
+                            </div>
+                        </div>
+                        <%}%>
+                        <!-- <div class="air1"></div> -->
+                    </div>
+                    <!-- <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div>
+                    <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div> -->
+                </div>
+            </li>
+            <li><span class="menuair">厨卫电器</span>
+                <i class="fa fa-angle-right"></i>
+                <div class="menu-hidden">
+                    <div class="air">
+                        <% for(var i=0;i<e.length;i++){ %>
+                        <div class="air1 faddish" id="<%= e[i].biaoshi%>">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 10px;" src="<%= e[i].src%>" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc" style="margin-top:55px;"><%= e[i].title%></p>
+                                <p class="price"><%= e[i].price%>.00 元</p>
+                            </div>
+                        </div>
+                        <%}%>
+                        <!-- <div class="air1"></div> -->
+                    </div>
+                    <!-- <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div>
+                    <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div> -->
+                </div>
+            </li>
+            <li><span class="menuair">XESS浮窗电视</span>
+                <i class="fa fa-angle-right"></i>
+                <div class="menu-hidden">
+                    <div class="air">
+                        <% for(var i=0;i<f.length;i++){ %>
+                        <div class="air1 faddish" id="<%= f[i].biaoshi%>">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 10px;" src="<%= f[i].src%>" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc"><%= f[i].title%></p>
+                                <p class="price"><%= f[i].price%>.00 元</p>
+                            </div>
+                        </div>
+                        <%}%>
+                        <!-- <div class="air1"></div> -->
+                    </div>
+                    <!-- <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div>
+                    <div class="air">
+                        <div class="air1"></div>
+                        <div class="air1"></div>
+                    </div> -->
+                </div>
+            </li>
+            <li><span class="menuair">配件周边</span>
+                <i class="fa fa-angle-right"></i>
+                <div class="menu-hidden">
+                    <div class="air">
+                        <div class="air1">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 10px;" src="/images/z-peijian1.png" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc">TCL RC801D智能语音电视遥控器</p>
+                                <p class="price">149.00</p>
+                            </div>
+                        </div>
+                        <div class="air1">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 10px;" src="/images/z-peijian1.png" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc">TCL RC801D智能语音电视遥控器</p>
+                                <p class="price">149.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="air">
+                        <div class="air1">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 10px;" src="/images/z-peijian3.png" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc">电视原装挂架 WMB333</p>
+                                <p class="price">699.00 元</p>
+                            </div>
+                        </div>
+                        <div class="air1">
+                            <div class="airImage">
+                                <img width="83%" style="margin-left:13px;margin-top: 10px;" src="/images/z-maikefeng.png" alt="">
+                            </div>
+                            <div class="airContent">
+                                <p class="tv_desc">天籁K歌无线双话筒麦克风MM-1 Pro</p>
+                                <p class="price">68.00 元</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <ul class="dot">
+        <li class="dot1" style="background: red;"></li>
+        <li class="dot1"></li>
+        <li class="dot1"></li>
+    </ul>
+    <img class="prev" src="/images/z-left.png" alt="">
+    <img class="next" src="/images/z-right.png" alt="">
+</div>
+<!-- 专区 -->
+<div class="zhuanqu">
+    <div><img width="100%" src="/images/z-zhuan1.jpg" alt=""></div>
+    <div><img width="100%" src="/images/z-zhuan2.jpg" alt=""></div>
+    <div><img width="100%" src="/images/z-zhuan3.jpg" alt=""></div>
+</div>
+<!-- 电视 -->
+<div class="tv" id="goods_tv">
+    <h2>电视</h2>
+    <ul class="tv1">
+        <li style="margin-left:30px">助力中国大屏打折,</li>
+        <li>AI</li>
+        <li>XESS浮窗电视</li>
+    </ul>
+    <ul>
+        <li class="more">更多
+            <span>></span>
+        </li>
+    </ul>
+</div>
+<div class="tv_serise">
+    <div class="tv_serise_lf">
+        <img width="100%" src="/images/z-datv.jpg" alt="">
+    </div>
+    <div class="tv_serise_lr">
+        <div class="tv_serise_lr_top">
+            <% for(var i=0;i<a.length;i++){%>
+            <div class="tv_serise1 faddish" id="<%= a[i].biaoshi%>">
+                <img width="170px" src="<%= a[i].src%>" alt="">
+                <p style="font-size: 14px;color:#333;"><%= a[i].title%></p>
+                <p style="width:80%;margin-left:28px;margin-top: 10px;font-size: 12px;color:#9b9b9b"><%= a[i].miaoshu%></p>
+                <p style="font-size: 14px;color:#ff2524;margin-top: 10px;font-weight: 900;"><%= a[i].price%>.00 元</p>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+<!-- 空调 -->
+<div class="tv" id="goods_air" style="margin-top: 10px;">
+    <h2>空调</h2>
+    <ul class="tv1">
+        <li style="margin-left:30px">1匹</li>
+        <li>1.5匹</li>
+        <li>柜机</li>
+    </ul>
+    <ul>
+        <li class="more">更多
+            <span>></span>
+        </li>
+    </ul>
+</div>
+<div class="tv_serise">
+    <div class="tv_serise_lf">
+        <img width="100%" src="/images/z-daice.jpg" alt="">
+    </div>
+    <div class="tv_serise_lr">
+        <div class="tv_serise_lr_top">
+            <% for(var i=0;i<b.length;i++){%>
+            <div class="tv_serise1 faddish" id="<%= b[i].biaoshi%>">
+                <img style="margin-top: 10px;" width="170px" src="<%= b[i].src%>" alt="">
+                <p style="font-size: 14px;color:#333;"><%= b[i].title%></p>
+                <p style="width:80%;margin-left:28px;margin-top: 10px;font-size: 12px;color:#9b9b9b"><%= b[i].miaoshu%></p>
+                <p style="font-size: 14px;color:#ff2524;margin-top: 10px;font-weight: 900;"><%= b[i].price%>.00 元</p>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+<!-- 冰箱 -->
+<div class="tv" id="goods_ice" style="margin-top: 10px;">
+    <h2>冰箱</h2>
+    <ul class="tv1">
+        <li style="margin-left:30px">双门</li>
+        <li>三门</li>
+        <li>多门</li>
+        <li>对开门</li>
+    </ul>
+    <ul>
+        <li class="more">更多
+            <span>></span>
+        </li>
+    </ul>
+</div>
+<div class="tv_serise">
+    <div class="tv_serise_lf">
+        <img width="100%" src="/images/z-daair.jpg" alt="">
+    </div>
+    <div class="tv_serise_lr">
+        <div class="tv_serise_lr_top">
+            <% for(var i=0;i<c.length;i++){%>
+            <div class="tv_serise1 faddish" id="<%= c[i].biaoshi%>">
+                <img style="margin-top: 8px;" width="170px" src="<%= c[i].src%>" alt="">
+                <p style="font-size: 14px;color:#333;margin-top: 5px;"><%= c[i].title%></p>
+                <p style="width:80%;margin-left:28px;margin-top: 10px;font-size: 12px;color:#9b9b9b"><%= c[i].miaoshu%></p>
+                <p style="font-size: 14px;color:#ff2524;margin-top: 10px;font-weight: 900;"><%= c[i].price%>.00 元</p>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+<!-- 智能配件 -->
+<div class="tv" id="goods_smart" style="margin-top: 10px;">
+    <h2>智能配件</h2>
+    <ul class="tv1">
+        <li style="margin-left:30px">美妆个护</li>
+        <li>耳机</li>
+        <li>智能门锁</li>
+    </ul>
+    <ul>
+        <li class="more">更多
+            <span>></span>
+        </li>
+    </ul>
+</div>
+<div class="tv_serise">
+    <div class="tv_serise_lf">
+        <img width="100%" src="/images/z-peijian2.jpg" alt="">
+    </div>
+    <div class="tv_serise_lr">
+        <div class="tv_serise_lr_top">
+            <% for(var i=0;i<d.length;i++){%>
+            <div class="tv_serise1 faddish" id="<%= d[i].biaoshi%>">
+                <img style="margin-top: 10px;" width="170px" src="<%= d[i].src%>" alt="">
+                <p style="font-size: 14px;color:#333;margin-top: 8px;"><%= d[i].title%></p>
+                <p style="width:80%;margin-left:28px;margin-top: 10px;font-size: 12px;color:#9b9b9b"><%= d[i].miaoshu%></p>
+                <p style="font-size: 14px;color:#ff2524;margin-top: 10px;font-weight: 900;"><%= d[i].price%>.00 元</p>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</div>
+<!-- 新闻 -->
+<div class="box_news">
+    <div class="newsbox">
+        <div class="news_img">
+            <img width="100%" src="/images/z-news1.jpg" alt="">
+        </div>
+        <div class="news_desc">
+            <div class="clear">
+                <!-- <img class="li" src="/images/z-news2.png" alt=""> -->
+                <span style="width: 40px;height:20px;background: rgb(75, 137, 241);color:white;font-size:12px;" class="li">新闻</span>
+                <span class="news_title">李先生：时势造就伟大企业</span>
+            </div>
+            <div class="detail">未来，TCL要以世界级企业为标杆考量自己，在<br>更深层的技术领域加大投入力量，同时在品牌升级方面继续努力。</div>
+            <div class="look">查看详情 >></div>
+        </div>
+    </div>
+    <div class="newsbox">
+        <div class="news_img">
+            <img width="100%" src="/images/z-news3.jpg" alt="">
+        </div>
+        <div class="news_desc">
+            <div class="clear">
+                <span style="width: 40px;height:20px;background: rgb(75, 137, 241);color:white;font-size:12px;" class="li">产品</span>
+                <span class="news_title">重新定义大屏交互体验</span>
+            </div>
+            <div class="detail">TCL·XESS智屏变身55英寸巨屏手机。</div>
+            <div class="look" style="margin-top: 50px;">查看详情 >></div>
+        </div>
+    </div>
+    <div class="newsbox">
+        <div class="news_img">
+            <img width="100%" src="/images/z-news4.jpg" alt="">
+        </div>
+        <div class="news_desc">
+            <div class="clear">
+                <span style="width: 40px;height:20px;background: rgb(75, 137, 241);color:white;font-size:12px;" class="li">资讯</span>
+                <span class="news_title">创新缔造未来！</span>
+            </div>
+            <div class="detail">TCL冰箱洗衣机IFA 2019让健康生活极速登场。</div>
+            <div class="look" style="margin-top: 50px;">查看详情 >></div>
+        </div>
+    </div>
+    <div class="newsbox">
+        <div class="news_img">
+            <img width="100%" src="/images/z-news5.jpg" alt="">
+        </div>
+        <div class="news_desc">
+            <div class="clear">
+                <span style="width: 40px;height:20px;background: rgb(75, 137, 241);color:white;font-size:12px;" class="li">资讯</span>
+                <span class="news_title">王成：大尺寸和8K是电视的必然趋势</span>
+            </div>
+            <div class="detail">TCL继续发挥标杆带动作用，引领我国 8K 超高<br>清的发展，从而提升我国显示产业的国际竞争力。</div>
+            <div class="look">查看详情 >></div>
+        </div>
+    </div>
+</div>
+<!-- 查看更多 -->
+<div class="look1"><p class="lookmore">查看更多 >></p></div>
+<!-- 商品列表的导航 -->
+<div class="goods_nav" style="display: none;">
+    <ul>
+        <li><a href="#goods_tv">电视</a></li>
+        <li><a href="#goods_air">空调</a></li>
+        <li><a href="#goods_ice">冰箱</a></li>
+        <li><a href="#goods_smart">智能配件</a></li>
+    </ul>
+</div>
+
+<script>
+    // 轮播图
+    var show=document.getElementsByClassName('show')
+    var lunbo=document.getElementsByClassName('lunbo')[0]
+    var dot1=document.getElementsByClassName('dot1')
+    var prev=document.getElementsByClassName('prev')[0]
+    var next=document.getElementsByClassName('next')[0]
+    var num=0
+    for(var i=0;i<dot1.length;i++){
+        dot1[i].index=i
+        dot1[i].onclick=function(){
+            show[num].style.display='none'
+            dot1[num].style.background='#fff'
+            show[this.index].style.display='inline-block'
+            this.style.background='red'
+            num=this.index
+        }
+    }
+    var timer;
+    function timefn(){
+        timer=setInterval(function(){
+            nextimage()
+        },3000)
+    }
+    timefn()
+    lunbo.onmouseover=function(){
+        clearInterval(timer)
+    }
+    lunbo.onmouseleave=function(){
+        timefn()
+    }
+    function nextimage(){
+        show[num].style.display='none'
+        dot1[num].style.background='#fff'
+        num++
+        if(num>2){
+            num=0
+        }
+        show[num].style.display='inline-block'
+        dot1[num].style.background='red'
+    }
+    prev.onclick=function(){
+        show[num].style.display='none'
+        dot1[num].style.display='#fff'
+        num--
+        if(num<0){
+            num=show.length-1
+        }
+        show[num].style.display='inline-block'
+        dot1[num].style.background='red'
+    }
+    next.onclick=function(){
+        nextimage()
+    }
+
+    // 商品列表导航
+    var goods_nav=document.querySelector('.goods_nav')
+    window.onscroll=function(){
+        if(window.scrollY>550 && window.scrollY<3150){
+            goods_nav.style.display='block'
+        }else {
+            goods_nav.style.display='none'
+        }
+    }
+
+    var faddish = document.querySelectorAll('.faddish')
+    // faddish[0].onclick= function(){
+    //     console.log(1)
+    //     $.ajax('/xiangqing',{
+    //             method:'GET',
+    //             success:function(result){
+    //                     console.log(result)
+    //             }
+    //         })
+    // }
+    // for(let i=0;i<faddish.length;i++){
+    //     faddish[i].onclick = function(){
+           
+    //         $.ajax(`/xiangqing/${this.id}`,{
+    //             method:'GET',
+    //             // data:{biaoshi:`${this.id}`},
+    //             success:function(result){
+    //                     console.log(result)
+    //             }
+    //         })
+           
+    //     }
+    // }
+    for(let i=0;i<faddish.length;i++){
+        faddish[i].onclick = function(){
+           
+            $.ajax(`/xiangqing/${this.id}`,{
+                method:'GET',
+                // data:{biaoshi:`${this.id}`},
+                success:function(result){
+                        console.log(result)
+                }
+            })
+           
+        }
+    }
+
+
+
+</script>

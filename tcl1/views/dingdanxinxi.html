@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 1174px;margin: 15px auto;">
+    <img src="../public/images/logo.png" alt=""><span
+        style="font-weight: 900;position: relative;top:-10px;">订单提交信息</span>
+</div>
+
+<div style="width: 1174px;height: 30px;line-height: 30px;margin: 5px auto;">
+    <span style="font-size: 20px;font-weight:900;float: left;">商品和优惠卷、积分</span>
+    <a href=""
+       style="text-decoration: none;display: inline-block;border: 1px red solid;width: 80px;height: 25px;padding:10px 10px;color:red;text-align: center;float:right;">返回购物车</a>
+</div>
+<div style="width: 1174px;height: 1px;background:#ccc;margin: 20px auto;"></div>
+
+<!--    商品信息-->
+<div style="width: 1174px;height: 100px;margin: 10px auto;border-bottom: 1px solid #eee">
+    <img style="width:100px;height: 100px;float: left" src="http://img.mall.tcl.com/dev1/0/000/708/0000708551.fid"
+         alt="">
+    <span style="width: 600px;height: 100px;text-align: center;line-height: 100px;float: left;display: inline-block;font-weight: 700;font-size: 17px;">feiowjgiowrjhg</span>
+    <span style="width: 170px;height: 100px;text-align: center;line-height: 100px;float: left;display: inline-block;font-weight: 700;font-size: 17px;">5555✖2</span>
+    <span style="width: 100px;height: 100px;text-align: center;line-height: 100px;float: left;display: inline-block;font-weight: 700;font-size: 17px;">有货</span>
+    <span style="width: 150px;height: 100px;text-align: center;line-height: 100px;float: right;display: inline-block;font-weight: 700;font-size: 17px;color: red;">8888元</span>
+</div>
+
+<div style="width: 1174px;margin: 20px auto;">
+    <img style="width:100%" src="../public/images/youhui.png" alt="">
+</div>
+
+<!--使用积分-->
+<div style="width: 1174px;height:30px;margin: 15px auto;height: 50px;border-bottom: 1px solid #eee;">
+    <span style="font-size: 20px;font-weight: 900;display: inline-block;width: 150px;height: 30px;float: left;line-height: 30px;">使用积分</span>
+    <input id="jifen" type="text" style="width: 200px;height: 28px;float: left;margin-left: 50px;">
+    <span style="display: inline-block;width: 350px;height: 30px;float: left;font-size: 13px;line-height: 30px;color: #555;margin-left: 15px;">
+            你有<span style="color: red;">111</span>积分，
+            你最多可以使用 <span style="color: red">111</span>积分
+        </span>
+    <span style="font-size: 20px;font-weight: 900;display: inline-block;width: 100px;height: 30px;float:right;line-height: 30px;color: red;">
+            -<span id="jifenyouhui">100</span>元
+        </span>
+</div>
+
+<!--收货信息-->
+<div style="width: 1174px;height: 30px;font-weight: 900;margin: auto;margin-top: 50px;font-size: 19px;">收获信息</div>
+<div style="width: 1174px;height: 1px;margin: 0 auto;background: #eee;"></div>
+<div style="width: 1174px;margin: 15px auto;">
+    <span style="color: red">*</span>姓名： <input type="text" style="width: 200px;height: 30px;">
+    <span style="color: red;margin-left: 200px;">*</span>手机号码： <input type="text" style="width: 200px;height: 30px;">
+    <br><br>
+    <span style="color: red">*</span> 省份：<select id="Select1" style="width: 200px;height: 30px;"></select>
+    市：<select id="Select2" style="width: 200px;height: 30px;"></select>
+    地区：<select id="Select3" style="width: 200px;height: 30px;"></select> <textarea style="position: relative;top:5px;"
+                                                                                   name="" id="" cols="50" rows="3"
+                                                                                   placeholder="区、街道编号/楼名称"></textarea>
+    <br><br>
+</div>
+
+<div style="width: 1174px;height: 1px;margin: 0 auto;background: #eee;"></div>
+
+<!--bottom-->
+<div style="width: 1174px;margin: 20px auto;">
+    <div style="width: 300px;height:250px;">
+        <div style="width: 100%;height: 30px;">
+            <span style="width: 40%;height: 100%;float: left;display: inline-block">商品件数：</span>
+            <span style="width: 30%;height: 100%;float: right;display: inline-block;color: red;font-size: 20px;text-align: right">
+                    <span>2</span>件
+                </span>
+        </div>
+        <div style="width: 100%;height: 30px;">
+            <span style="width: 40%;height: 100%;float: left;display: inline-block">金额合计：</span>
+            <span style="width: 30%;height: 100%;float: right;display: inline-block;color: red;font-size: 20px;text-align: right">
+                    <span>55555</span>元
+                </span>
+        </div>
+        <div style="width: 100%;height: 30px;">
+            <span style="width: 40%;height: 100%;float: left;display: inline-block">优惠卷抵扣：</span>
+            <span style="width: 30%;height: 100%;float: right;display: inline-block;color: red;font-size: 20px;text-align: right">
+                    <span>0</span>元
+                </span>
+        </div>
+        <div style="width: 100%;height: 30px;">
+            <span style="width: 40%;height: 100%;float: left;display: inline-block">积分抵扣：</span>
+            <span style="width: 30%;height: 100%;float: right;display: inline-block;color: red;font-size: 20px;text-align: right">
+                    -<span>111</span>元
+                </span>
+        </div>
+        <div style="width: 100%;height: 30px;">
+            <span style="width: 40%;height: 100%;float: left;display: inline-block">运费：</span>
+            <span style="width: 30%;height: 100%;float: right;display: inline-block;color: red;font-size: 20px;text-align: right">
+                    <span>0</span>元
+                </span>
+        </div>
+        <br><br>
+        <div style="width: 100%;height: 30px;">
+            <span style="width: 40%;height: 100%;float: left;display: inline-block;color:red;">应付总额：</span>
+            <span style="width: 50%;height: 100%;float: right;font-weight: 900;display: inline-block;color: red;font-size: 27px;text-align: right">
+                    <span>9999</span>.00元
+                </span>
+        </div>
+    </div>
+</div>
+
+<div style="width: 1174px;height: 80px;margin: 20px auto;">
+    <button style="width:200px;height: 70px;background: red;color: white;float: right;text-align: center;font-size: 25px;font-weight: 900;line-height: 70px;">点击付款</button>
+</div>
+
+<script src="../public/javascripts/jsAddress.js"></script>
+<script>
+    addressInit('Select1', 'Select2', 'Select3');
+    var jifen = document.getElementById('jifen')
+    var jifenyouhui = document.getElementById('jifenyouhui')
+    jifen.onkeyup = function () {
+        var regex = /^\d+$/;
+        var n = jifen.value
+        if(regex.test(n)){
+            if(n<=100 && n>0){
+
+            }else{
+                jifen.value=100
+            }
+        }else{
+           jifen.value=''
+        }
+    }
+</script>
+</body>
+</html>

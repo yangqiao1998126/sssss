@@ -1,0 +1,218 @@
+<% if(a != '0' && a!= undefined){%>
+    <% include loginNav.ejs%>
+<%}else {%>
+    <% include NoLoginNav.ejs%>
+<%}%>
+<style>
+    .integral-nav{
+        width:100%;
+        height:60px;
+        background: #fff;
+        border-bottom:1px solid #eee;
+        position: relative;
+    }
+    .integral-title{
+        float:left;
+    }
+    .integral-title li{
+        width:65px;
+        height:100%;
+        float: left;
+        margin-left: 25px;
+        color:#333;
+        font-size: 14px;
+        line-height:60px;
+        text-align: center;
+    }
+    .integral-title li:hover{
+        cursor:pointer;
+        color:#ff4526;
+    }
+    .integral_search{
+        outline: none;
+        width:200px;
+        height:35px;
+        border:1px solid #efefef;
+        padding-left: 10px;
+        float:right;
+        margin-right:60px;
+        margin-top:13px;
+    }
+    .search_circle{
+        width:26px;
+        height:26px;
+        background: rgb(226, 226, 226);
+        border-radius:50%;
+        position:absolute;
+        right:68px;
+        top:19px;
+        cursor: pointer;
+    }
+    .question{
+        width:85%;
+        height:580px;
+        margin:0 auto;
+        margin-top:3.8%;
+    }
+    .question-left{
+        width:19%;
+        height:298px;
+        background: #fff;
+        border:1px solid #e2e2e2;
+        float:left;
+    }
+    .sort{
+        width:100%;
+        height:40px;
+        background-color:#ff4400;
+        color:#fff;
+        font-size:16px;
+        line-height:40px;
+        text-indent: 22px;
+    }
+    .tab li{
+        font-size:16px;
+        color:#000;
+        line-height:50px;
+        text-indent: 20px;
+        border-bottom:2px solid #f1f1f1;
+        cursor: pointer;
+    }
+    .tab li a:hover{
+        color:#ff4400;
+    }
+    .question_right{
+        width:73%;
+        height:510px;
+        border:1px solid #dedede;
+        float:right;
+        padding:23px;
+    }
+    .rule{
+        width:100%;
+        height:48px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height:48px;
+        border-bottom:1px solid #f1f1f1;
+    }
+</style>
+<!-- 积分商城的导航 -->
+<div class="integral-nav clear">
+    <img width="6%" style="margin-left: 60px;margin-top: 5.6px;float: left;" src="/images/logo.png" alt="">
+    <ul class="integral-title clear">
+        <a href="/IntegralMall"><li style="margin-left: 60px;">首页</li></a>
+        <li>铁粉权益</li>
+        <a href=""><li>积分抽奖</li></a>
+        <li>铁粉社区</li>
+        <a href=""><li style="border-bottom:solid 2.5px red;color:#ff4526;">问题咨询</li></a>
+        <a href="/"><li>TCL官网</li></a>
+    </ul>
+    <input class="integral_search" type="text" placeholder="商品关键字">
+    <div class="search_circle">
+        <i style="line-height: 25px;margin-left: 5px;color:#999" class="fa fa-search"></i>
+    </div>
+</div>
+<!-- 问题咨询 -->
+<div class="question clear">
+    <div class="question-left">
+        <ul class="tab">
+            <div class="sort">问题分类</div>
+            <li class="integral_question" style="color: #ff4400;"><a>1.积分获取及使用</a></li>
+            <li class="integral_question"><a>2.铁粉权益及成长值</a></li>
+            <li class="integral_question"><a>3.商品兑换及配送</a></li>
+            <li class="integral_question"><a>4.活动规则</a></li>
+            <li class="integral_question"><a>5.其他</a></li>
+        </ul>
+    </div>
+    <div class="question_right">
+        <div class="question_tab">
+            <div class="rule">积分获取及使用</div>
+            <p style="color:#e53333;font-size:14px;margin-top: 10px;"><b>一、积分是什么？</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">积分为TCL官方平台虚拟货币，用户可在TCL官方平台注册，在TCL官方渠道购买产品或参与TCL铁粉互动获得；</p>
+            <p style="color:#000;font-size:14px;">积分有效期限为2年；您可以在“个人中心”中查询到您的积分详细情况。</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>二、如何获取积分？</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">  在TCL官方渠道购买产品可领取购物积分，不同渠道相同的购物金额（实际支付金额）所获得的积分比例不同，其中TCL官方商城比例最高按1元等于1积分获取。</p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;"> 参加TCL官方活动获取积分，包括但不限于TCL官方商城、TCL铁粉社区及TCL官方自媒体渠道的活动，积分规则以活动公告为准。</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>三、积分兑换</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">TCL积分商城为铁粉精选了各品类商品，包括虚拟商品与实物商品。兑换时，选择心仪商品后，按照兑换流程完成积分支付等待发货即可；</p>
+            <p style="color:#000;font-size:14px;">参与商品兑换的积分请以活动公告为准。</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>四、积分退返</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">购买TCL产品获取积分后，如产生退货，将在铁粉账户中扣除所获积分。若铁粉账户中积分余额不足以扣除，将在退款中减去积分折算金额（100积分等于1元）。</p>
+            <p style="color:#e53333;font-size:14px;"><b>五、积分有效期</b></p><br>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">  积分有效期为2年，以每年的1月1日做为结算日，如2年未消耗尽均作到期处理。 如：用户小T 在2016年获得总积分为3000，至2018年1月1日仍未消耗尽，则对2016年的未消耗积分做到期处理</p>
+        </div>
+        <div class="question_tab" style="display: none;">
+            <div class="rule">铁粉权益及成长值</div>
+            <p style="color:#e53333;font-size:14px;margin-top: 10px;"><b>权益一：免运费</b></p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">享受等级：T1—T6等级铁粉可享</p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">使用方法：在TCL官方商城购买产品可享受免运费的服务，去购物>></p><br>
+            <p style="color:#e53333;font-size:14px;"><b>权益二： 积分抵现</b></p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">享受等级：T1—T6等级铁粉可享</p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">使用方法：在TCL官方商城购物的铁粉可使用积分按一定比例抵现，去购物>></p><br>
+            <p style="color:#e53333;font-size:14px;"><b>权益三：铁粉日专享</b></p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">享受等级：T1—T6等级铁粉可享</p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">申请方式：铁粉日当天登录积分商城，进入活动专题页可领取专属优惠券，去参与>></p><br>
+            <p style="color:#e53333;font-size:14px;"><b>权益四：免费清洗</b></p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">享受等级：T1—T6等级铁粉可享</p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">申请方式：参与积分商城的不定期家电清洗活动，去参与>></p><br>
+            <p style="color:#e53333;font-size:14px;margin-top: 10px;"><b>权益五：免费安装</b></p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">享受等级：T1—T6等级铁粉可享</p>
+            <p style="color:#000;font-size:12px;margin-top: 10px;font-weight: 700;">申请方式：参与积分商城的不定期免费安装活动，去参与>></p><br>
+        </div>
+        <div class="question_tab" style="display: none;">
+            <div class="rule">商品兑换及配送</div>
+            <p style="color:#e53333;font-size:14px;margin-top: 10px;"><b>一、关于实物商品发货</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">在时效内商品将会下单后的7个工作日内安排发货；在时效外如商品暂时缺货，待商品到货后运营人员会在第一时间安排发货</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>二、申请退货</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">收到货后不支持退货，如有产品质量问题，在收到货后7日内可在线联系客服申请换货；</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>三、申请退积分</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">成功下单7个工作日内不可退积分；成功下单7个工作日外仍未发货可退积分，联系客服提供【订单号】+【联系电话】即可</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>四、关于虚拟产品</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">虚拟商品一经兑换，概不退换。兑换后可在“我的订单”中查看相应优惠码</p>
+        </div>
+        <div class="question_tab" style="display: none;">
+            <div class="rule">活动规则</div>
+            <p style="color:#e53333;font-size:14px;margin-top: 10px;"><b>一、商城的常见活动</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">现有活动：“积分抽奖”及“每月28铁粉日”，更多活动陆续开放，敬请期待</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>二、关于铁粉日</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">每月铁粉日包含：低折扣兑换、特价兑换、积分抽奖等活动 （每月28日-30日10：00开始，实际以活动公告为准）</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>三、积分抽奖</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">按活动要求消耗积分进行抽奖，中奖后需按要求填写个人信息，7个工作日内寄出；如存在作弊行为，经后台核实后将进行封号处理，如有疑问可咨询在线客服</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>四、互动积分</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">可登录TCL铁粉社区进行签到，发帖，回帖等互动，具体规则可查看“积分任务”</p>
+        </div>
+        <div class="question_tab" style="display: none;">
+            <div class="rule">其他</div>
+            <p style="color:#e53333;font-size:14px;margin-top: 10px;"><b>一、如何获取机身二维码</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">跳转 “图文”页面（http://hy.tcl.com/mall/news/detail/id/173.html）</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>二、修改账号密码</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">点击 “个人中心”--“账号管理”--“账号密码”---“修改密码”进行修改</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>三、账号积分异常</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">其他渠道购买的商品（不包含内购网）购物金额：积分=2:1到账。积分部分自动到账（例如：购买1000元的商品，可以获得500积分）</p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">1）如收货手机号与注册手机号一致，则可在公众号：TCL官方服务菜单栏中“我的产品”中申请领取购物积分；</p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">2）如收货手机号与注册手机号不一致，则需要在积分商城“我的产品”中绑定产品领积分。（该方式只支持TV产品，其他暂时不支持）</p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">如仍有问题可以咨询在线客服</p><br>
+            <p style="color:#e53333;font-size:14px;"><b>四、人工服务</b></p>
+            <p style="color:#000;font-size:14px;margin-top: 10px;">拨打客服热线 400-812-3456 或点击在线客服</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var integral_question=document.querySelectorAll('.integral_question')
+    var question_tab=document.querySelectorAll('.question_tab')
+    var num3=0
+    for(var i=0;i<integral_question.length;i++){
+        integral_question[i].index=i
+        integral_question[i].onclick=function(){
+            integral_question[num3].style.color='#000'
+            question_tab[num3].style.display='none'
+            question_tab[this.index].style.display='block'
+            this.style.color='#ff4400'
+            num3=this.index
+        }
+    }
+</script>
+<% include base/bottom.ejs %>
+<% include base/foot.ejs %>

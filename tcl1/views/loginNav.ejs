@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .nav {
+            width: 100%;
+            height: 40px;
+            background: #666666;
+        }
+
+        .nav-left {
+            width: 50%;
+            height: 40px;
+            /* background: red; */
+            float: left;
+        }
+
+        .nav-right {
+            width: 40%;
+            height: 40px;
+            /* background: yellow; */
+            float: right;
+        }
+
+        .nav-content li {
+            float: left;
+            font-size: 11px;
+            color: #CCCCCC;
+            margin-left: 45px;
+            line-height: 40px;
+        }
+
+        .nav-content li:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .nav-content li:nth-child(1) {
+            margin-left: 60px;
+        }
+
+        .nav-right li {
+            float: right;
+            font-size: 11px;
+            color: #CCCCCC;
+            margin-left: 10px;
+            line-height: 40px;
+        }
+
+        .nav-right li:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .ver {
+            margin-left: 10px;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="nav">
+    <div class="nav-left">
+        <ul class="nav-content">
+            <a href="/news"><li>TCL新闻</li></a>
+            <li>企业采购</li>
+            <li>经销商之家</li>
+            <a href="/userexpIndex"><li>用户体验中心</li></a>
+            <li>铁粉社区</li>
+            <li>人才招聘</li>
+        </ul>
+    </div>
+    <div class="nav-right">
+        <li class="tuichulogin">【退出登录】
+            <span class="ver">|</span>
+        </li>
+        <li class="login" ><span style="color: red;font-size: 17px;"><a href="/usercenter"><%= jieguo.nick_name %></a></span>,你好！</li>
+
+        <li class="shopping"><a href="/gouwuche">购物车</a>
+            <span class="ver">|</span>
+        </li>
+        <li class="weixin">微信商城
+            <span class="ver">|</span>
+        </li>
+    </div>
+    <script>
+        var tuichulogin = document.getElementsByClassName('tuichulogin')[0]
+        tuichulogin.onclick = function () {
+            console.log(document.cookie);
+            var cok = document.cookie.split('=')
+            console.log(cok)
+            function clearAllCookie() {
+                var date = new Date();
+                date.setTime(date.getTime() - 10000);
+                var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+                if (keys) {
+                    for (var i = keys.length; i--;)
+                        document.cookie = keys[i] + "=0; expire=" + date.toGMTString() + "; path=/";
+                }
+            }
+            clearAllCookie()
+            console.log(document.cookie);
+            location.href = '/'
+
+
+        }
+    </script>
+</div>

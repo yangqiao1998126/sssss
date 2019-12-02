@@ -1,0 +1,142 @@
+<% include loginNav.ejs%>
+<% include nav-login.ejs %>
+<style>
+    * {
+        padding: 0;
+        margin: 0
+    }
+    .order p:hover{
+        color:#ef0d0e;
+    }
+    .clear::after{
+        content: '';
+        display:block;
+        clear:both;
+    }
+</style>
+<div style="width: 100%;height: 40px;background:#f0f0f0;">
+    <div style="width: 1174px;height: 40px;background:#f0f0f0;margin: 0px auto;
+    line-height: 40px;color:#666;font-size: 14px;">
+        首页 / 我的订单
+    </div>
+</div>
+<div class="clear" style="width: 1174px;margin: 30px auto">
+    <!--    //zuo-->
+    <div class="order" style="width: 200px;height: 600px;background: #f5f5f5;float: left">
+        <a style="text-decoration: none;" href="/usercenter"><p
+                    style="width: 100%;height: 30px;line-height: 30px;color: #666;text-align: center;font-size:17px;padding: 50px 0 15px 0;">
+                个人中心</p></a>
+
+        <a style="text-decoration: none;" href="/shoucangjiemian"><p
+                    style="width: 100%;height: 30px;line-height: 30px;color:#666;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">
+                我的收藏</p></a>
+        <p style="width: 100%;height: 30px;line-height: 30px;color: #ef0d0e;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">
+            我的订单</p>
+        <p style="width: 100%;height: 30px;line-height: 30px;color:#666;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">
+            我的评价</p>
+
+    </div>
+    <!--    //you-->
+    <div style="width: 915px;border: 1px #f0f0f0 solid;float: right;padding: 10px 10px;margin-bottom: 60px;">
+        <!-- <img style="width: 150px;height: 40px;" src="/images/dingdan.png" alt=""> -->
+        <p style="font-size:24px;margin-top:10px;color:#666;padding: 8px;">我的订单</p>
+
+        <div style="width: 750px;height: 40px;margin-top: 20px;cursor: pointer;line-height: 40px;">
+            <p style="width:150px;text-align: center;float: left;color: red">待发货（<span style="color: red;"><%= jieguo.dingdan.length%></span>）</p>
+            <p style="width:150px;text-align: center;float: left">待收货（0）</p>
+            <p style="width:150px;text-align: center;float: left">待评价（0）</p>
+            <p style="width:150px;text-align: center;float: left">已完成（0）</p>
+            <p style="width:150px;text-align: center;float: left">已关闭</p>
+        </div>
+
+            <% for(var i = 0;i<jieguo.dingdan.length;i++){%>
+        <div style="width: 820px;border:1px solid #f5f1f1; margin-top: 20px;padding-left: 20px;">
+            <p style="font-size: 20px; color: red;margin-top: 20px;">交易成功</p>
+
+            <div style=" width: 800px;;color: #666;margin-top: 10px;height: 30px;">
+                <p style="width: 500px;float: left">
+                    <span><%= jieguo.dingdan[i].shijian%></span>&nbsp;|&nbsp;
+                    订单号：<span><%= jieguo.dingdan[i]._id%></span>
+                </p>
+                <p style="width: 200px;float: right;text-align: right">订单金额：<span
+                            style="color: red;font-size: 22px;"><%= jieguo.dingdan[i].yuanjia%></span>元</p>
+            </div>
+
+            <div style="width: 800px;height: 1px;background: #f5f1f1;margin-top: 20px;"></div>
+            <%for(var j = 0 ;j<jieguo.dingdan[i].shangpin.length ; j++){%>
+            <div style="width: 870px;height: 100px;padding: 15px 0;margin: 10px auto;">
+                <img style="height: 100%;width: 100px;margin-left: 30px;"
+                     src="<%= jieguo.dingdan[i].shangpin[j].img%>" alt="">
+                <span style="font-size: 17px;width:400px;text-align: center;display: inline-block;position: relative;top: -50px;margin-left: 20px;"><%= jieguo.dingdan[i].shangpin[j].miaoshu%></span>
+                <span class="danjia"
+                      style="font-size: 17px;width: 300px;color: red;width:100px;text-align: right;display: inline-block;position: relative;top: -50px;"><%= jieguo.dingdan[i].shangpin[j].danjia%>元 x<%= jieguo.dingdan[i].shangpin[j].shuliang%></span>
+            </div>
+            <%}%>
+            <div><img class="tp" src="/images/you.png" style="width: 20px;height: 20px;cursor: pointer" alt=""><span style="color:#444;font-size: 12px">&nbsp;&nbsp;订单详情</span></div>
+            <div class="xiangxi" style="display: none;">
+                <p style="font-size: 18px;color: #777;margin-top: 15px;">收获信息</p>
+                <p style="margin-left: 50px;margin-top: 15px;">姓名：<span><%= jieguo.dingdan[i].name%></span></p>
+                <p style="margin-left: 50px;margin-top: 15px;">手机号：<span><%= jieguo.dingdan[i].tel%></span></p>
+                <p style="margin-left: 50px;margin-top: 15px;">收货地址：<span><%= jieguo.dingdan[i].add%></span></p>
+                <p style="width: 100%;height:1px;background: #ddd;margin-top: 15px"></p>
+                <p style="font-size: 18px;color: #777;margin-top: 15px;">发票信息</p>
+                <p style="margin-left: 50px;margin-top: 15px;">发票类型：<span>电子发票</span></p>
+                <p style="margin-left: 50px;margin-top: 15px;">发票内容：<span>商品明细</span></p>
+                <p style="margin-left: 50px;margin-top: 15px;">发票抬头：<span>#aaa</span></p>
+                <p style="width: 100%;height:1px;background: #ddd;margin-top: 15px"></p>
+                <p style="font-size: 18px;color: #777;margin-top: 15px;">支付明细</p>
+                <p style="margin-left: 80%;margin-top: 15px;">商品总价：<span style="color: red;font-size: 20px;;"><%= jieguo.dingdan[i].yuanjia%></span>元</p>
+                <p style="margin-left: 80%;margin-top: 15px;">优惠金额：<span style="color: red;font-size: 20px;;">-<%= jieguo.dingdan[i].jifen%></span>元</p>
+                <p style="margin-left: 80%;margin-top: 15px;">订单金额：<span style="color: red;font-size: 20px;;"><%= jieguo.dingdan[i].shifujine%></span>元</p>
+                <br> <p style="margin-left: 75%;margin-top: 15px;">实付金额：<span style="color: red;font-size: 28px;"><%= jieguo.dingdan[i].shifujine%></span>元</p>
+            </div>
+
+        </div>
+            <%}%>
+
+    </div>
+
+</div>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/layer.js"></script>
+<script>
+    var tp = document.getElementsByClassName('tp')
+    var xiangxi = document.getElementsByClassName('xiangxi')
+    var a = 0
+    for(let i = 0 ;i<tp.length ; i++){
+        tp[i].onclick = function () {
+            if(a==0){
+                xiangxi[i].style.display = 'block'
+                tp[i].src= '/images/xia.png'
+                a = 1
+            }else{
+                xiangxi[i].style.display = 'none'
+                tp[i].src= '/images/you.png'
+                a = 0
+            }
+        }
+    }
+      var tuichulogin = document.getElementsByClassName('tuichulogin')[0]
+      tuichulogin.onclick = function () {
+          console.log(document.cookie);
+          var cok = document.cookie.split('=')
+          console.log(cok)
+
+          function clearAllCookie() {
+              var date = new Date();
+              date.setTime(date.getTime() - 10000);
+              var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+              if (keys) {
+                  for (var i = keys.length; i--;)
+                      document.cookie = keys[i] + "=0; expire=" + date.toGMTString() + "; path=/";
+              }
+          }
+
+          clearAllCookie()
+
+          location.href = '/'
+
+      }
+</script>
+<% include base/nav-bot%>

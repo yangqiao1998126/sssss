@@ -1,0 +1,252 @@
+<% if(a != '0' && a != undefined){%>
+    <% include loginNav.ejs%>
+        <% include nav-login.ejs %>
+<%}else {%>
+    <% include NoLoginNav.ejs%>
+        <% include nav-loginNo.ejs%>
+<%}%>
+
+
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    .clear{
+        display: block;
+        content: '';
+        clear: both;
+    }
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+    .news-nav{
+        width: 980px;
+        height: 65px;
+        border-bottom: #E4E4E5 solid 1px;
+        margin: 0 auto;
+    }
+    .news-li li{
+         float: left;
+         font-size: 15px;
+         line-height: 64px;
+         margin-right: 60px;
+         color: #666666;
+    }
+    .news-li li:nth-child(2){
+        color: #f00;
+    }
+    .news-li li:hover{
+        color: #f00;
+        cursor: pointer;
+    }
+    /* 更多下面二级菜单     */
+    .most{
+      width: 100px;
+      height: 120px;
+      background: #FAFAFA;
+      position: absolute;
+      z-index: 1;
+      top: 50px;
+      line-height: 20px;
+      display: none;
+    }
+    .most-one{
+        width: 80px;
+        height: 40px;
+        border-bottom: 1px #DEDEDE solid;
+        text-align: center;
+        margin-left: 10px;
+        line-height: 40px;
+        color: #333333;
+    }
+    .most-one:hover{
+        color: #FF0000;
+    }
+    .most-one:nth-child(3){
+        border: none;
+    }
+    .m-most{
+        position: relative;
+    }
+    .m-most:hover .most{
+        display: block;
+    }
+/* 输入框     */
+    .input-box{
+        width: 70%;
+        height: 50px;
+        /* border: #FF0000 solid 1px; */
+        margin: 0 auto;
+        margin-top: 50px;
+        display: flex;
+    }
+    input{
+        width: 200px;
+        height: 35px;
+        color:#ccc;
+        margin-right: 60px;
+        margin-top: 7px;
+        outline: none;
+    }
+    .search-d{
+        width: 210px;
+        height: 35px;
+        /* border: springgreen solid; */
+        position: relative;
+      
+    }
+    #ser{
+        padding-left: 10px;
+    }
+    .search-d i{
+        position: absolute;
+        right: 25px;
+        top: 15px;
+    }
+/* 内容     */
+    .new-content{
+        width: 70%;
+        height: 1100px;
+        /* border: #FF0000 solid 1px; */
+        margin: 0 auto;
+        margin-top: 50px;
+        display: flex;
+    }
+    .new-content ul li{
+        width: 100%;
+        height: 200px;
+        /* border: olive solid 1px; */
+        margin-bottom: 20px;
+    }
+    .new-content ul li .content-l{
+        width: 30%;
+        height: 200px;
+        /* border: olive solid 1px; */
+    }
+    .new-content ul li .content-r{
+        width: 65%;
+        height: 200px;
+        /* border: olive solid 1px; */
+    }
+    .content-r .content-p{
+        width: 420px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 17px;
+        margin-top: 10px;
+    }
+    .content-p:hover{
+        cursor: pointer;
+    }
+    .content-r  .content-s{
+        color: #666666;
+        margin-left: 80%;
+        
+    }
+    .find{
+        margin-top: 80px;
+        font-size: 14px;
+        color: #ccc;
+    }
+    .find:hover{
+        color: #f00;
+        cursor: pointer;
+    }
+ /* 底部    */
+    /* footer{
+        width: 80%;
+        height: 30px;
+        background: #ffffff;
+        margin-left: 10%;
+        margin-top: 20px;
+        text-align: center;
+    }
+    footer button{
+        border: none;
+        outline: none;
+    }
+    footer span,button{
+        text-align: center;
+        margin-left: 20px;
+    }
+    footer button:hover{
+        background: #f00;      
+    }
+    footer #nowpage{
+        margin-left: 0px;
+    } */
+    </style>
+</head>
+<body>
+        <div class="news-nav">
+            <ul class="news-li .clear" >
+                <a href="/news"><li>新闻中心</li></a> 
+                <li>集团新闻</li>
+                <li>产品新闻</li>
+                <li>视频新闻</li>
+                <li>第三方观点</li>
+                <li class="m-most">更多
+                    <div class="most">
+                            <p class="most-one">服务新闻</p>
+                            <p class="most-one">服务新闻</p>
+                            <p class="most-one">新闻</p>
+                    </div>
+                </li>
+            </ul>  
+        </div>
+        <div class="input-box">
+        <input id="m1" type="month" name="month" >
+        <input id="m2" type="month" name="month" >
+        <div class="search-d"><input id="ser" type="text" placeholder="查询关键字"><i class="fa fa-search"></i></div>
+        </div>
+        <div class="new-content">
+            <ul>
+                <%for(var i=0;i<data.length;i++){ %>
+                    <li class="clear new-li" id="<%= data[i]._id%>">
+                        <div class="content-l fl">
+                            <img width="100%" height="200px" src="<%= data[i].src%>" alt="">
+                        </div>
+                        <div class="content-r fr">
+                            <p class="content-p"><%= data[i].title%></p>
+                            <br><span class="content-s">2019-09-12</span>
+                            <p class="find"><%= data[i].desc%>>></p>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+       
+        <script>
+            var find = document.querySelectorAll('.find')
+            var contentp = document.querySelectorAll('.content-p')
+            for(var i=0;i<find.length;i++){
+                find[i].onclick = function(){
+                    console.log(1)
+                    location.href = '/newsContent'
+                }
+                contentp[i].onclick = function(){
+                    console.log(2)
+                    location.href = '/newsContent'
+                }
+            }
+
+
+            var newli = document.getElementsByClassName('new-li')
+            for(let i=0;i<newli.length;i++){
+                newli[i].onclick = function(){
+                  location.href = `/newsContent/${this.id}`
+                }
+            }
+        </script>
+    <% include base/backtop.ejs %>
+    <% include base/nav-bot.ejs %>
+    </body>
+</html>

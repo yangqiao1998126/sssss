@@ -1,0 +1,199 @@
+ <% include base/head.ejs %> 
+ <% include loginNav.ejs %>
+ <% include  nav-login.ejs%>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .fz{
+        font-size: 14px;
+        color: #333;
+    }
+    .f00{
+        color: #f00;
+    }
+    .ml{
+        margin-left: 50px;
+    }
+    li{
+        list-style: none;
+    }
+    .fl{
+        float: left;
+    }
+    .body{
+        color: #f1f1f1;
+    }
+    .total{
+        margin-left: 20px;
+    }
+    .number{
+        font-size: 16px; 
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .price{
+        width: 1226px;
+        height: 118px;
+        background: #fff;
+    }
+    .s-price{
+        font-weight: bolder;
+        line-height: 118px;
+
+    }
+    .s-put{
+        width: 102px;
+        height: 38px;
+        outline: none;
+        margin-right: 10px;
+        margin-left: 100px;
+        padding-left: 10px;
+    }
+    .s-puts{
+        margin-left: 8px;
+    }
+    .btn{
+        width: 112px;
+        height: 38px;
+        background: #f00;
+        border: none;
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+    }
+    .sale{
+        font-weight: bolder;
+    }
+    .litre{
+        font-weight: lighter;
+    }
+    .l-price{
+    font-weight: lighter;
+    }
+    .s-shop{
+        width: 1226px;
+    }
+    .s-shop .s-ul{
+        display: flex;
+        justify-content:space-between; 
+        flex-wrap: wrap; 
+    }
+    .s-shop .s-ul .s-li{
+        width: 395px;
+        height: 410px;
+        margin-top: 15px;
+        background: #fff;
+    }
+    .s-li img{
+        margin: 20px 28px;
+        cursor: pointer;
+    }
+    .s-title{
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .s-dic{
+        font-size: 12px;
+        color: #908f8f;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .money{
+        margin-top: 8px;
+        color: #f00;
+        text-align: center;
+        font-weight: bold;
+    }
+    .nowbuy{
+        width: 145px;
+        height: 35px;
+        border: none;
+        border: red 1.1px solid;
+        margin-left: 123px;
+        background: #fff;
+        color: red;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    .nowbuy:hover{
+        background: #f00;
+        color: #fff;
+    }
+    .Search{
+        width:100%;
+        background: #f5f1f1;
+        padding-bottom:100px;
+    }
+    </style>
+</head>
+<body>
+    <div class="Search">
+        <p class="s-search fz ml" style="padding-top:20px;">搜索：
+            <span class="s-name fz f00"><%= searchName%></span>
+            <span class="total fz">共
+                <span class="number fz f00"><%=arr.length%></span>个商品
+            </span>
+        </p>
+        <div class="price ml" style="margin-top: 25px;">
+            <p class="s-price ml">价格
+                <input class="s-put ipt1" type="text" placeholder="￥">-
+                <input class="s-put ipt2" type="text" placeholder="￥">
+                <button id="<%= searchName%>" class="btn ml">确定</button>
+            </p> 
+        </div>
+        <p class="sale ml" style="margin-top: 25px;">综合排序
+            <span class="litre ml">销量↑</span>
+            <span class="l-price ml">价格↑</span>
+        </p>
+        <div class="s-shop ml" style="margin-top: 25px;">
+            <ul class="s-ul">
+                <% for(var i = 0 ; i < arr.length ; i++){%>
+                <li id="<%= arr[i].biaoshi%>" class="s-li">
+                    <img width="338px" height="230px" src="<%= arr[i].src%>" alt="">
+                    <p class="s-title"><%= arr[i].title%></p>
+                    <p class="s-dic "><%= arr[i].miaoshu%></p>
+                    <p class="money fz"><%= arr[i].price%>元</p>
+                    <button class="nowbuy">立即购买</button>
+                </li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+    <script src="/javascripts/jquery.js"></script>
+    <script>
+        var ipt1 = document.getElementsByClassName('ipt1')[0]
+        var ipt2 = document.getElementsByClassName('ipt2')[0]
+        var btn = document.getElementsByClassName('btn')[0]
+        var sli = document.getElementsByClassName('s-li')
+        btn.onclick = function () {
+            // if(ipt1.value != '' && ipt2.value != ''){
+            //     $.ajax('/pricesousuo',{
+            //           method:'GET',
+            //           data:{
+            //               qi:ipt1.value,
+            //               zhi:ipt2.value,
+            //               lei:this.id
+            //           },
+            //           success:function (result) {
+            //                 console.log(111)
+            //               location.href = 'pricesousuo'
+            //           },
+            //           error:function (err) {
+            //             console.log(err)
+            //           }
+            //      })
+            // }
+            location.href = `/pricesousuo/?qi=${ipt1.value}&zhi=${ipt2.value}&lei=${this.id}`
+        }
+        for(let i = 0 ;i<sli.length ; i++){
+            sli[i].onclick = function () {
+                location.href = `/xiangqing1/${this.id}`
+            }
+        }
+    </script>
+    <% include base/backtop.ejs%>
+    <% include base/bottom.ejs %>
+    <% include base/foot.ejs %> 

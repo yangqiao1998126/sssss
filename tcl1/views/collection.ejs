@@ -1,0 +1,88 @@
+<% include loginNav.ejs %>
+<% include nav-login.ejs %>
+<style>
+    .order p:hover{
+        color:#ef0d0e;
+    }
+    .clear::after{
+        content: '';
+        display:block;
+        clear:both;
+    }
+</style>
+<div style="width: 100%;height: 40px;background:#f0f0f0;">
+    <div style="width: 1174px;height: 40px;background:#f0f0f0;margin: 0px auto;
+    line-height: 40px;color:#666;font-size: 14px;">
+        首页 / 我的收藏
+    </div>
+</div>
+
+<div class="clear" style="width: 1174px;margin: 30px auto">
+    <!--    //zuo-->
+    <div class="order" style="width: 200px;height: 600px;background: #f5f5f5;float: left">
+        <a style="text-decoration: none;" href="/usercenter"><p style="width: 100%;height: 30px;line-height: 30px;color: #666;text-align: center;font-size:17px;padding: 50px 0 15px 0;">
+                个人中心</p></a>
+        <p  style="width: 100%;height: 30px;line-height: 30px;color: #ef0d0e;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">
+            我的收藏</p>
+        <a style="text-decoration: none;" href="/Mydingdan"><p style="width: 100%;height: 30px;line-height: 30px;color: #666;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">
+                我的订单</p></a>
+        <p style="width: 100%;height: 30px;line-height: 30px;color: #666;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">
+            我的评价</p>
+
+    </div>
+    <!--    //you-->
+    <div style="width: 915px;border: 1px #f0f0f0 solid;float: right;padding: 10px 10px;">
+        <!-- <img style="width: 150px;height: 40px;" src="/images/shoucang.png" alt=""> -->
+        <p style="font-size:24px;margin-top:10px;color:#666;padding: 10px;">我的收藏</p>
+        <% for(var i =0;i<jieguo.shoucang.length;i++){%>
+        <div style="width: 870px;height: 154px;padding: 15px 0;border-bottom: 1px #f5f1f1 solid;margin: 10px auto;border-top: 1px #f5f1f1 solid;margin: 10px auto;">
+            <img style="position:relative;top:-70px;width:20px;height: 20px;" src="https://i.52112.com/icon/jpg/256/20190522/40614/1929213.jpg" alt="">
+            <img style="height: 154px;width: 154px;margin-left: 30px;" src="<%= jieguo.shoucang[i].img%>" alt="">
+            <span style="font-size: 16px;width:200px;text-align: center;display: inline-block;position: relative;top: -70px;margin-left: 50px;"><%= jieguo.shoucang[i].miaoshu%></span>
+            <span class="danjia"
+                  style="font-size: 16px;color: red;width:100px;text-align: center;display: inline-block;position: relative;top: -70px;"><%= jieguo.shoucang[i].danjia%>元</span>
+
+            <span style="width: 90px;text-align: center;display: inline-block;position: relative;top: -70px;">
+                <img src="/images/shanchu.png"  id="<%= jieguo.shoucang[i]._id%>" class="quxiaoshoucang"
+                        style="width: 20px;text-align: center;font-size: 12px;border: none;position: relative;cursor: pointer;left: 230px;top:10px;">
+            </span>
+        </div>
+        <%}%>
+    </div>
+</div>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/layer.js"></script>
+<script>
+    var tuichulogin = document.getElementsByClassName('tuichulogin')[0]
+    tuichulogin.onclick = function () {
+        console.log(document.cookie);
+        var cok = document.cookie.split('=')
+        console.log(cok)
+
+        function clearAllCookie() {
+            var date = new Date();
+            date.setTime(date.getTime() - 10000);
+            var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+            if (keys) {
+                for (var i = keys.length; i--;)
+                    document.cookie = keys[i] + "=0; expire=" + date.toGMTString() + "; path=/";
+            }
+        }
+
+        clearAllCookie()
+        location.href = '/'
+    }
+
+    var quxiaoshoucang = document.getElementsByClassName('quxiaoshoucang')
+    for(var i = 0 ;i<quxiaoshoucang.length ; i++){
+        quxiaoshoucang[i].onclick = function () {
+            //mizhu.toast('已取消关注')
+            layer.msg('已取消收藏');
+            setTimeout(()=>{
+                location.href = `/delshoucang/${this.id}`
+            },800)
+        }
+    }
+</script>
+<% include base/nav-bot.ejs %>

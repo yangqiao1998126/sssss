@@ -1,0 +1,388 @@
+<% include base/head.ejs%>
+<% include NoLoginNav.ejs%>
+<% include nav-loginNo.ejs%>
+<style>
+    *{
+        padding:0;
+        margin:0;
+    }  
+    .shoppingbuy-div{
+        height:690px;
+        /* width:1160px; */
+        width:100%;
+        border-bottom:0.8px solid #e2e2e2;    
+        margin-top:50px;
+    }
+    .shoppingbuy-div>div{
+        float:left;
+    }
+    #imgList{      
+        height:100px;
+        width:440px;      
+        margin:20px 0 0;  
+        margin-left:150px;                
+    }
+    #imgList img{
+        width: 58px;
+        height: 58px;      
+    }
+    .imglists{
+        width: 60px;
+        height: 60px;
+        border:2px solid #cccccc;
+        margin-left:50px;
+        margin:0 5px; 
+        float:left;
+    }
+    #imgList img:last-child{
+        margin-right:0px;
+    }
+    #bigImgBox{
+        border-bottom: 1px #e2e2e2 solid;
+        width: 520px;
+        /* height:439px;        */
+        margin:0 auto; 
+    }
+    #imgShow{
+        width: 440px;      
+        text-align:center;
+    }
+    .span{
+        height: 20px;
+        float: right;
+        cursor: pointer;
+    }  
+    .sb-fl-div{      
+        height:560px;
+        width:580px;
+        text-align: center;
+        margin:0 auto;     
+        box-sizing: border-box;
+        margin-left:120px;        
+    }
+    .sb-fr-div{
+        height:690px;
+        width:400px; 
+        margin-top: 50px;        
+    }
+    .sb-sprice{    
+        width:400px;
+        height:80px;       
+        border-top: 1px #e2e2e2 solid;
+        border-bottom: 1px #e2e2e2 solid;
+        line-height:80px;       
+    }
+    .sb-buy{
+        width:136px;
+        height:64px;
+        background:#ff0000;
+        color:#ffffff;
+        border: 1px solid red;
+        cursor: pointer;
+        outline: 0;
+        font-size:16px;
+        position:relative;
+        /* top:-30px; */
+    }
+    .sb-add-shopping{
+        width:136px;
+        height:64px;
+        border: 1px solid red;
+        cursor: pointer;
+        outline: 0;
+        color:#ff0000;
+        background:#ffffff;
+        font-size:16px;
+        position:relative;
+        /* top:-30px; */
+        left:20px;
+    }
+    .sb-purc-text{
+        width:400px;
+        height:56px;        
+        position: relative;
+        padding: 22px 0;
+        border-bottom: 1px #e2e2e2 solid;           
+        /* text-align:center; */
+    }
+    /* .sb-btns{
+        width: 90px;
+        height: 62px;
+        margin-right: 10px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        position: relative;
+        top:-5px;
+    } */
+    /* .sb_val{
+        width: 56px;
+        height: 64px;
+        float: left;
+        color: #666;
+        border:0;
+        border-right: 1px solid #ccc;
+        text-align:center;
+    }
+    .sb-mun{
+        width: 32px;
+        height: 64px;
+        right: 0;
+        position: absolute;
+        box-sizing: content-box;
+        padding:8px 0;      
+    } */
+    /* .sb_add{
+        border:0;
+        outline:0;
+        background:none;
+    }
+    .sb_min{
+        border:0;
+        outline:0;
+        background:none;
+    } */
+    .sb-select-card{
+        width:790px;
+        /* height:4400px; */
+        margin-left:230px ;  
+        margin-bottom:100px;      
+    }
+    .sb_tab_menu{
+        width:790px;
+        height:82px;
+        line-height:80px;       
+        box-sizing: content-box;
+        margin-left:150px;
+    }
+    .sb_tab_menu>div{
+        float:left;
+        color:#555555;
+        font-size:16px;
+        width:65px;
+        height:80px;    
+        padding:0 24px;
+        margin-right:10px;
+    }
+    .sb-menu{
+       cursor:pointer;
+    }
+    .usually-problem>p{
+        width:350px;
+        height:150px;
+        float:left;
+        font-size:16px;
+        color:#000000;
+        margin-right:20px;
+    }
+    .usually-problem>p span:last-of-type{
+        font-size:12px;
+        color:#a5a5a5;
+    }
+    #shopcar p:hover{
+        color:red;
+        cursor: pointer;
+    }
+    #back p:hover{
+        color:red;
+        cursor: pointer;
+    }
+    .fs30{
+    font-size:30px;
+    }
+    .fs12{
+        font-size:12px;
+    }
+    .sb-server{
+        margin-top: 30px;
+    }
+    .sb-server li{
+        float:left;
+        margin-right:6px;
+        font-size: 13px;
+        color:#999;
+    }
+    .sb-nav{
+        width:100%;
+        height: 55px;
+        background: #f0f0f0;
+        color:#555;
+        font-size:16px;
+        line-height: 55px;
+    }
+    .sb-nav p{
+        margin-left: 80px;
+    }
+</style>
+
+<script type="text/javascript" src="javascripts/jquery.js" ></script>
+<div class="sb-nav">
+    <p>TCL官网 >
+        <span><%= a[0].title%></span>
+    </p>
+</div>
+<div>
+    <div class="shoppingbuy-div">
+        <div class="sb-fl-div ">
+            <div id="bigImgBox">           
+                <img id="imgShow" src="<%= a[0].src %>">
+            </div>
+            <div id="imgList">  
+                <div class="imglists"><img id="img1" src="<%= a[0].src %>" onclick="imgClick(this)" /></div>
+                <div class="imglists"><img id="img2" src="<%= a[0].src1 %>" onclick="imgClick(this)"/></div>
+                <div class="imglists"><img id="img3" src="<%= a[0].src2 %>" onclick="imgClick(this)"/></div>
+                <div class="imglists"><img id="img3" src="http://img.mall.tcl.com/dev1/0/000/731/0000731496.fid" onclick="imgClick(this)"/></div>
+            </div>
+        </div>   
+        <div class="sb-fr-div ">
+            <p class="fs30" style="padding:0 0 20px;color:#333333;font-weight: 900;"><%= a[0].title%></p>
+            <p class="fs12" style="color:#999999;padding:0 0 10px;"><%= a[0].miaoshu%></p>
+            <div class="sb-sprice">
+                <p style="font-size:14px">促销价：<span style="color:#FF0000;font-size:25px"><%= a[0].price %></span><span style="color:#FF0000;font-size:16px">元</span> </p>
+            </div>
+       
+            <div class="sb-purc-text">
+                <!-- <div class="sb-btns">
+                    <input class="sb_val" type="text" name="num" value="1">
+                    <div class="sb-mun">
+                        <button class="sb_add"><i class="fa fa-angle-up"  style="font-size:25px;"></i></button>
+                        <button class="sb_min"><i class="fa fa-angle-down" style="font-size:25px;"></i></button>
+                    </div>
+                </div> -->
+                <button id="<%= a[0].biaoshi%>" class="sb-buy">立即购买</button>
+                <button id="<%= a[0].biaoshi%>" class="sb-add-shopping">加入购物车</button>
+            </div>     
+            <ul class="sb-server">
+                <li>服务：</li>
+                <li>全国联保</li>
+                <li>|</li>
+                <li>7天退换货</li>
+                <li>|</li>
+                <li>积分抵扣</li>
+                <li>|</li>
+                <li>包邮 (偏远地区除外)</li>
+            </ul>
+        </div>
+        </div>
+        <div class="sb-select-card">
+            <div class="sb_tab_menu">
+                <div class="sb-menu">产品介绍</div>
+                <div class="sb-menu">规格参数</div>
+                <div class="sb-menu">服务政策</div>
+                <div class="sb-menu">常见问题</div>
+                <div class="sb-menu">评价</div>
+            </div>
+            <div class="tab_box">
+                <div>
+                    <img src="http://s0.mall.tcl.com/group1/M00/05/DD/Ckgbll2J2JmAbDkaAAIdibOCp3Q252.jpg">
+                   
+                    <img src="<%= a[0].src3%>">
+                 
+                    <img src="http://img.mall.tcl.com/dev1/0/000/729/0000729757.fid">
+                    <img src="http://img.mall.tcl.com/dev1/0/000/729/0000729755.fid">
+                    <img src="http://img.mall.tcl.com/dev1/0/000/729/0000729760.fid">
+                </div>
+                <div style="display:none;">
+                    <img src="http://img.mall.tcl.com/dev1/0/000/705/0000705855.fid">
+                    
+                </div>
+                <div style="display:none;">
+                    <img src="http://s0.mall.tcl.com/group1/M00/05/6E/CkgbllxhKc2Ac20ZAAPAXh-g3Qk7166717">
+                </div>
+                <div class="usually-problem" style="display:none;height:400px;">
+                    <p style="margin-top: 10px;margin-left: 50px;">                            
+                        <span>付款后什么时候发货，送上门吗？</span> <br/> <br/> 
+                        <span>您好，支付后我们将会在72小时内发出，3-7日送达；如有产品补货在途、物流无法送达等特殊情况，将会及时与您联系。</span>
+                    </p>
+                    <p style="margin-top: 10px;">
+                        <span>配挂架吗？安装要不要收费？</span> <br/> <br/> 
+                        <span>您好，电视标配的是座架，工程师上门安装底座收取30-50元，安装挂架收取90-150元不等，由于墙体及区域不同，具体费用以当地售后为准，预约热线4008-123456。</span>
+                    </p>
+                    <p style="margin-left: 50px;">
+                        <span>有发票吗？
+
+                            </span>
+                        <span>您好，2016年6月28日0点起，购物将开具电子发票，抬头默认为收件人姓名，发货后可登陆www.chaxunfapiao.com 输入订单编号，查询下载，如需开具专用增值税发票，请在付款前联系在线客服。
+
+                            </span>
+                    </p>
+                    <p>
+                        <span>收货要注意什么？怎么保修？</span>
+                        <span>签收时务必确保外包装完好，否者请协商开箱验机或联系商城客服并拒收。产品使用&质量问题，在第一时间联系在线客服，或拨打TCL售后服务热线：4008-123456 咨询预约。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+         <!-- 购物车图标 一键回顶部 -->
+        <!-- <div>
+            <div id="shopcar" style="width:50px;height:50px;border:1px solid rgb(231, 228, 228);position:fixed;top:450px;right:20px;z-index:2;text-align: center;font-size:12px;color:#a5a5a5;padding:3px 0;"><i class="fa fa-headphones" style="font-size:25px;color:#a5a5a5;"></i><p>客服</p></div>
+            <div id="back" style="width:50px;height:50px;border:1px solid rgb(231, 228, 228);position:fixed;top:506px;right:20px;z-index:2;text-align: center;font-size:12px;color:#a5a5a5;padding:3px 0;"><i class="fa fa-angle-up" style="font-size:25px;color:#a5a5a5"></i><p>顶部</p></div>
+    </div> -->
+</div>    
+<script>
+        //选项卡
+        $('.sb_tab_menu').children().click(function () {
+        var id = $(this).index(); //当前操作的元素索引值
+        $('.tab_box').children().eq(id).show().siblings().hide(); //当前显示，其他的隐藏。
+        });
+
+        var sb_menus = document.getElementsByClassName('sb-menu')
+      
+        var a = 0;
+            for(let i= 0;i<sb_menus.length;i++){
+                
+                sb_menus[i].onclick = function(){
+                    sb_menus[a].style.color ='#000'
+                    sb_menus[a].style.borderBottom='none'
+                
+                    this.style.color='red'
+                    this.style.borderBottom = '2px solid red'
+                    a= i
+                    
+                 }
+            }
+        
+        //点击小图切换大图
+        function imgClick(img){
+            $("#imgShow").attr("src",img.src);
+            $("#bigImgBox").css("display","block");           
+        }      
+        
+        var imglists= document.getElementsByClassName('imglists')      
+        var a = 0;
+            for(let i= 0;i<imglists.length;i++){
+                
+                imglists[i].onclick = function(){
+                    imglists[a].style.border ='none'
+                                                   
+                    this.style.border = '2px solid red'
+                    a= i
+                    
+                }
+            }
+
+
+         //减按钮操作     //加按钮操作        
+
+     var jiarugouwuche = document.getElementsByClassName('sb-add-shopping')[0]
+     jiarugouwuche.onclick = function () {
+                // $.ajax(`/chazhao/${this.id}`,{
+                //       method:'GET',
+                //       data:{},
+                //       success:function (result) {
+                //             alert(result)
+                //       },
+                //       error:function (err) {
+                //         console.log(err)
+                //       }
+                //  })
+         location.href = '/login'
+     }
+    var nowbuy = document.getElementsByClassName('sb-buy')[0]
+    nowbuy.onclick = function () {
+        location.href = '/login'
+    }
+</script>
+<% include base/backtop.ejs%>
+<% include base/bottom.ejs %>
+<% include base/foot.ejs%>

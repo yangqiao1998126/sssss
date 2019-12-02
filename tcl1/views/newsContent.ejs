@@ -1,0 +1,132 @@
+<% include base/head.ejs %>
+<% if(a != '0' && a != undefined){ %>
+    <% include loginNav.ejs %>
+        <% include nav-login.ejs %>
+<% }else { %>
+    <% include NoLoginNav.ejs %>
+        <% include nav-loginNo.ejs %>
+<% } %>
+<% include base/nav-con.ejs %>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .mt {
+        margin-top: 50px;
+    }
+
+    .mt1 {
+        margin-top: 25px;
+    }
+
+    h3 {
+        font-size: 22px;
+        font-weight: 100;
+        margin-left: 25%;
+
+    }
+
+    .w-data {
+        color: #666;
+        margin-left: 70%;
+        margin-top: 25px;
+    }
+
+    .w-content {
+        width: 980px;
+        height: 2000px;
+        /* border: olivedrab solid 1px; */
+        margin: 0 auto;
+
+    }
+
+    .article {
+        font-size: 14px;
+        color: #666;
+
+    }
+
+    .tu-bt {
+        font-size: 14px;
+        font-family: '微软雅黑';
+        margin-left: 45%;
+    }
+
+    .household {
+        width: 940px;
+        height: 214px;
+        border: #EEEEEE solid 1px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    .hd {
+        margin-left: 45%;
+        width: 60px;
+        height: 38px;
+    }
+
+    .tcl-hd {
+        margin-left: 45%;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    .tcl-s {
+        margin-left: 41%;
+        font-size: 13px;
+        font-weight: 300;
+        color: #999;
+        margin-top: 10px;
+    }
+
+    .btn {
+        width: 120px;
+        height: 28px;
+        border: none;
+        background: #3897f0;
+        margin-left: 42%;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .btn p {
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+<h3 class="mt"><%= b.title %></h3>
+<p class="w-data">2019-09-12</p>
+<div class="w-content mt">
+    <p class="article mt1">9月6日，当今世界上规模最大、影响力最强的消费类电子和家用电器产品展览会——2019柏林国际电子消费品展览会（IFA
+        2019），在德国柏林展览中心拉开帷幕。本次IFA展共吸引全球数百家高端电子消费和家电厂商、近10,000家媒体和数十万各国观众，共同见证未来生活新方式。作为专注用户健康生活的大国品牌，TCL冰箱洗衣机携X10、P6冰箱洗衣机等重磅新品亮相，并一举斩获“年度最具创新力家电品牌大奖”,TCL
+        X10洗衣机荣获IDG颁发的“免污分类洗护产品金奖”,再次让中国品牌的创新实力闪耀全球，成为世界家电舞台上的瞩目焦点。</p>
+    <img class="mt1" width="980px" src="<%= b.src1 %>" alt="">
+    <p class="tu-bt mt1">TCL冰箱洗衣机参展IFA 2019</p>
+    <p class="black mt1">黑科技装置引全球观众围观 创新实力赢得世界认可</p>
+    <p class="article mt1">
+        与往年一样，今年的IFA产品展示区聚集了数以万计的创新型消费电子和家电产品，其中位于TCL冰箱洗衣机展区的机械臂表演，更是让观众大开眼界：矗立在一台TCL急冷式冰箱前的机械臂Waiter，灵活地打开冰箱，拿出一罐冰啤酒递给在场观众。伴随着啤酒“砰”的一声打开，冰爽冷气溢出，围观众人止不住地发出惊叹。而这正是极速制冷机器TCL冰箱为大家带来的科技新体验。</p>
+    <img class="mt1" width="980px" src="<%= b.src2 %>" alt="">
+    <p class="tu-bt mt1">机械臂Waiter为现场观众演绎5分钟冰啤酒</p>
+    <p class="article mt1">
+        创新不止于外在炫酷的展示，更在于内里深厚的积淀。与以往聚焦创新技术的产品相比，今年的IFA重点关注消费电子和家电市场的创新驱动力，因此，由德国工商会（DIHK）和美国国际数据集团（IDG）联手设立、代表消费电子和家电产业科技创新最高荣誉的IFA产品技术创新系列奖项（消费者电子创新指标），比往年更受瞩目。而TCL冰箱洗衣机也继去年斩获多项创新大奖后，再度站上IFA的领奖台，TCL
+        X10洗衣机凭借免污分类洗创新科技将IDG“免污分类洗护产品金奖”收入囊中，TCL冰箱洗衣机荣获“年度最具创新力家电品牌大奖”。这既是对TCL冰箱洗衣机强大科技创新实力的认可，也是对其“专注用户健康消费需求、立足实际应用场景进行务实创新”的价值主张的肯定，昭示着中国家电品牌正在成为全球科技创新的重要力量。</p>
+    <p class="black mt1">免污分类洗专家TCL洗衣机 不断创新颠覆打造健康生活</p>
+    <p class="article mt1">
+        无论是生产力的提升，还是观念的转变，健康的追求都是促使人类不断进步的内因。然而，在生活质量日益提升的今天，洗衣机却因为结构特点始终无法摆脱桶内藏污纳垢的问题，成为最让用户头疼的问题之一：经过一段时间的使用后，洗衣机内部藏污纳垢，滚筒洗衣机门封圈背后容易附着、聚集污垢，并且难以清理，从而造成“洗衣二次污染”，滋生细菌，危害用户身体健康。此外，伴随生活质量的提升，家庭珠宝首饰、眼镜等小型贵重物品的清洗也始终是一个难题，送到门店专柜费时费力，自己动手又难以清洗干净。</p>
+
+</div>
+<div class="household">
+    <img class="hd mt" src="/newimages/logo.png" alt="">
+    <p class="tcl-hd">TCL家电</p>
+    <p class="tcl-s">大国品牌TCL官方服务号</p>
+    <button class="btn"><p>查看</p></button>
+</div>
+<% include base/backtop.ejs %>
+<% include base/nav-bot.ejs %>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<% include loginNav.ejs %>
+<style>
+    .order p:hover{
+        color:#ef0d0e;
+    }
+    .clear::after{
+        content: '';
+        display:block;
+        clear:both;
+    }
+    .genghuan{margin-top: 10px;width:80px;height:30px;cursor: pointer;color:#555;background: #fff;border:#ccc solid 1px;outline: 0;}
+    .genghuan:hover{background:red;color:white;}
+</style>
+<% include nav-login.ejs %>
+<div style="width: 100%;height: 40px;background:#f0f0f0;">
+    <div style="width: 1174px;height: 40px;background:#f0f0f0;margin: 0px auto;
+    line-height: 40px;color:#666;font-size: 14px;">
+        首页 / 个人中心
+    </div>
+</div>
+
+<div class="clear" style="width: 1174px;height: 600px;margin: 30px auto">
+    <!--    //zuo-->
+    <div class="order" style="width: 200px;height: 600px;background: #f5f5f5;float: left">
+        <a style="text-decoration: none;" href="/usercenter"><p style="width: 100%;height: 30px;line-height: 30px;color: #ef0d0e;text-align: center;font-size:17px;padding: 50px 0 15px 0;">个人中心</p></a>
+        <a style="text-decoration: none;" href="/shoucangjiemian"><p style="width: 100%;height: 30px;line-height: 30px;color: #666;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">我的收藏</p></a>
+        <a style="text-decoration: none;" href="/Mydingdan "><p style="width: 100%;height: 30px;line-height: 30px;color: #666;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">我的订单</p></a>
+        <p style="width: 100%;height: 30px;line-height: 30px;color: #666;text-align: center;font-size:17px;padding: 20px 0;cursor: pointer;">我的评价</p>
+
+    </div>
+    <!--    //you-->
+    <div style="width: 875px;height: 540px;border: 1px #f0f0f0 solid;float: right;padding: 10px 30px;">
+        <!-- <img style="width: 150px;height: 40px;" src="/images/geren.png" alt=""> -->
+        <p style="font-size:24px;margin-top:10px;color:#666;">个人中心</p>
+        <!--        //you top-->
+        <div style="width:850px;height: 40px;background:#f0f0f0;padding: 15px;line-height: 40px;font-size: 14px;color:#666;margin-top: 20px;">
+            为提高用户体验，系统已对您在TCL官网、铁粉社区、积分商城上的基础信息做了合并，您可以在2018年2月28日前修改和确认
+        </div>
+        <!--        //you center-->
+        <div style="width: 880px;height: 400px;margin-top: 35px;">
+
+            <!--              //you center left-->
+            <div style="width: 200px;height: 200px;border-radius: 50%;float: left;border: 1px #c3c3c3 solid;background: #FE3338;">
+                <img id="touxiang" style="width: 100%;height: 100%;border-radius: 50%" src="<%= jieguo.touxiangurl%>" alt="">
+                <form name="filename" action="/tijiao" method="post" enctype="multipart/form-data">
+
+                    <input style="cursor: pointer;margin-top: 10px;" name='wenjian' type="file" value="选择头像">
+
+                    <button class="genghuan" style="" type="submit">点击更换</button>
+                    <img id="baocuntouxiang" style="width:20px;height: 28px;position: relative;top:6px;margin-left: 15px;" src="/images/xiazai.png" alt="">
+                </form>
+            </div>
+
+            <div style="width: 600px;height: 400px;float: right">
+                昵称：<span><%= jieguo.nick_name %></span>
+                <span class="xiugainicheng" style="font-size: 12px;color:red;margin-left: 15px;cursor: pointer;">
+                    点击修改昵称 >>
+                </span>
+                <span style="margin-left: 90px;">账户安全：较高</span>
+                <br><br><br>
+                注册邮箱：<span style="margin-right: 50px;"><%= jieguo.email %></span> 我的积分：<span><%= jieguo.jifen%></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="/javascripts/jquery.js"></script>
+<script>
+    var tuichulogin = document.getElementsByClassName('tuichulogin')[0]
+    tuichulogin.onclick = function () {
+        console.log(document.cookie);
+        var cok = document.cookie.split('=')
+        console.log(cok)
+
+        function clearAllCookie() {
+            var date = new Date();
+            date.setTime(date.getTime() - 10000);
+            var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+            if (keys) {
+                for (var i = keys.length; i--;)
+                    document.cookie = keys[i] + "=0; expire=" + date.toGMTString() + "; path=/";
+            }
+        }
+
+        clearAllCookie()
+
+        location.href = '/'
+
+    }
+
+    var xiugainicheng = document.getElementsByClassName('xiugainicheng')[0]
+    xiugainicheng.onclick = function () {
+        var b = prompt('请输入新的昵称')
+        const nickNameReg = /[\u4e00-\u9fa5]/gm
+        if(b !== null && nickNameReg.test(b)){
+            location.href=`/changeNick_name/${b}`
+        }else{
+            alert('昵称不能为空且必须为中文')
+        }
+    }
+
+    baocuntouxiang.onclick = function () {
+
+        // $.ajax('/baocuntouxiang',{
+        //       method:'GET',
+        //       data:{touxiang:touxiang.src},
+        //       success:function (result) {
+        //         console.log(result)
+        //       },
+        //       error:function (err) {
+        //         console.log(err)
+        //       }
+        //  })
+        location.href = `/baocuntouxiang/?touxiang=${touxiang.src}`
+    }
+
+
+</script>
+<% include base/nav-bot.ejs %>

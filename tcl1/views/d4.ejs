@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>铁粉社区</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    
+    <style>
+        *{
+          padding:0;
+          margin:0;
+        }
+        .bigbox{
+            width:1020px;
+            height:1000px;
+            /* background: cornflowerblue; */
+            margin: 0 auto;
+        }
+        body{
+            background: #F1F1F3;
+        }
+        .nav{
+            width:100%;
+            height:60px;
+            background:#343434;
+        }
+        .line1{
+            float:left;
+            height:60px;
+            line-height:60px;
+            margin-left: 15px;
+            color:#fff;
+            font-size: 16px;
+        }
+        .blank{
+            width:100%;
+            height: 20px;
+        }
+        .iron{
+            width:690px;
+            height: 70px;
+            background:#fff;
+            /* margin-left: 180px; */
+        }
+        .hot{
+            margin-left: 30px;
+            font-size: 14px;
+            font-weight: normal;
+            float: left;
+            margin-right: 30px;
+            color: #999;
+            line-height: 67px;
+        }
+       .hot1{
+           float:left;
+           color:#333;
+           font-size: 14px;
+           font-weight: normal;
+           float: left;
+           margin-right: 50px;
+           line-height: 67px;
+        }
+        .hot1 i{
+           font-size:6px;
+        }
+        header{
+            height: 40px;
+            line-height: 40px;
+            background: #fff;
+        }
+        /* li{
+            height: 60px;
+            background: #fff;
+            border-bottom: 10px solid #f5f5f5;
+        } */
+        .add{
+            color: green;
+        }
+        .minus{
+            color: red;
+        }
+        /* .fl{
+            max-width: 20%;
+            height: 200px;
+            overflow: hidden;
+        } */
+        /* .fr{
+            max-width: 50%;
+        } */
+        .coddimy{
+            font-size: 16px;
+            margin-top: 25px;
+            color:#333;
+            margin-left: 7px;
+        }
+        
+        .image{
+            width:55px;
+            height: 55px;
+            margin-top: 20px;
+            border:1px solid #ccc;
+            margin-left: 35px;
+        }
+        .iron1{
+            width:660px;
+            height: 90px;
+            background: #fff;
+            border:1px solid #ccc;
+        }
+        .recommed{
+            width:690px;
+            height:65px;
+            background:#fff;
+            /* margin-left: 180px; */
+            margin-top: 20px;
+            border-bottom:1px solid #ccc;
+            position:relative;
+        }
+        .recommed1{
+            position:absolute;
+            left:40px;
+            top:20px;
+            color:#666;
+        }
+        .recommed2{
+            position:absolute;
+            left:100px;
+            top:20px;
+            color:#666;
+        }
+        .desc{
+            font-size:12px;
+            color:#aaa;
+            margin-left: 10px;
+        }
+        .desc1{
+            color: #F26C4F;;
+            margin-top: 25px;
+        }
+        .desc2{
+            width:20px;
+            height: 20px;
+            color:#FFF2BC;
+            background:#FFB200;
+            border-radius: 5px;
+        }
+        .forward1{
+            color:#666;
+            font-size:14px;
+            float:right;
+            
+        }
+        .forward2{
+            color:#666;
+            font-size:14px;
+            float:right;
+        }
+        .fast{
+            width:300px;
+            height: 370px;
+            background: #fff;
+            /* float:left; */
+            margin-left: 20px;
+            /* margin-top: -230px; */
+            border-radius: 5px;
+        }
+        .fast1{
+            width:260px;
+            height: 50px;
+            font-size: 16px;
+            color: #333;
+            padding-bottom: 8px;
+            font-weight: 400;
+            line-height: 50px;
+            border-bottom: 1px solid #e2e2e2;
+            margin-left: 20px;
+            float:left;
+        }
+        .fast2{
+            float:left;
+            width:260px;
+            height: 75px;
+            border-bottom: 1px solid #e2e2e2;
+            text-align: center;
+            margin: 0 auto;
+            margin-left: 20px;
+        }
+        .fast2 div{
+            float:left;
+            margin-left: 30px;
+            margin-right: 30px;
+            color:#666;
+            font-size:14px;
+        }
+        .fast3{
+            font-size:14px;
+            margin-left: 0;
+            float:left;
+        }
+        .reward{
+             width:300px;
+             background: #fff;
+             /* float:left; */
+             margin-left: 20px;
+             margin-top: 15px;
+             border-radius: 5px; 
+        }
+        .reward1{
+            float:left;
+            width:165px;
+            height: 60px;
+            border:3px solid #f74545;
+            text-align: center;
+        }
+        .span1{
+            margin-top: 10px;
+             /* margin-left: 11px; */
+             color: #f74545;
+        }
+        .span2{
+            
+             font-size:14px;
+             color:#666;
+        }
+        .reward2{
+            width:129px;
+            height: 66px;
+            background: #f74545;
+            float:left;
+        }
+        .reward3 img{
+           margin-left: 20px;
+           margin-top: 10px;
+        }
+        .reward2 p{
+             margin-top: 18px;
+             margin-left:0px;
+            font-size:18px;
+            color:#FFF;
+        }
+        .reward3{
+            width: 72px;
+            height: 66px;
+            float:left;
+        }
+        .reward4{
+            width:57px;
+            height: 66px;
+            float:left;
+        }
+        .products{
+            width:300px;
+            height: 450px;
+            background: #fff;
+            margin-left: 20px;
+            /* margin-left: 893px; */
+            margin-top: 100px;
+        }
+        .products p{
+            margin-left: 37px;
+        }
+        .bigimage{
+            position: relative;
+            width: 210px;
+            height: 300px;
+            border:1px solid #ccc;
+            margin:20px auto;
+        }
+        .show{
+            width: 210px;
+            height: 230px;
+            display:none;
+            border-radius: 10px;
+            /* margin-top: -55px; */
+        }
+        .bigimage :first-child{
+            display:inline-block;
+        }
+        .fansDot{
+            position: absolute;
+            bottom:20px;
+            margin-left: 90px;
+        }
+        .fans_dot{
+            width:10px;
+            height: 10px;
+            float: left;
+            margin-right: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            background: rgba(0,0,0,0.3);
+        }
+        .community{
+            width:100%;
+            height: 260px;
+            margin-top: 50px;
+        }
+        .community1{
+            width:100%;
+            height: 205px;
+            background:#262626;
+            float:left;
+            margin-top: 200px;
+        }
+        .community2{
+            width:100%;
+            height: 55px;
+            background:#191919;
+            float:left;
+        }
+        .community2 p{
+            color: #7e7e7e;
+            font-size:12px;
+            line-height: 55px;
+            margin-left: 150px;
+        }
+        .community3{
+            width:960px;
+            height: 205px;
+            float:left;
+        }
+        .community4{
+            width:350px;
+            height: 205px;
+            float:left;
+                
+        }
+        .wechat{
+            float:left;
+        }
+        .community4 p{
+            font-size:14px;
+            color:#fff;
+            float:left;
+        }
+        .nav1{
+            font-size: 14px;
+            color: #7e7e7e;
+            font-weight: 600;
+            line-height: 20px;
+            float:left;
+            margin-left: 150px;
+            margin-top: 50px;
+        }
+        .nav2{
+            line-height: 20px;
+            display: block;
+            font-size: 14px;
+            float:left;
+            margin-left: 20px;
+            margin-top: 50px;
+            color: #b6b6b6;
+        }
+        .community img{
+            float:left;
+            margin-left: 220px;
+            margin-top: 30px;
+        }
+        .friendship{
+            font-size: 14px;
+            color: #b6b6b6;
+            /* font-weight: 600; */
+            line-height: 20px;
+            float:left;
+            margin-left: 150px;
+            margin-top: 10px;
+        }
+        .fans-left{
+            float:left;
+        }
+        .fans-right{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <!--导航栏-->
+    <div class="blank"></div>
+    <div class="bigbox">
+        <div class="fans-left">
+            <div class="iron">
+                <span class="hot">热门版块:</span>
+                <span class="hot1">
+                    <i class="fa fa-circle"></i> 铁粉杂谈
+                </span>
+                <span class="hot1">
+                    <i class="fa fa-circle"></i> 随手拍
+                </span>
+                <span class="hot1">
+                    <i class="fa fa-circle"></i> 玩机评测
+                </span>
+                <span class="hot1">
+                    <i class="fa fa-circle"></i> 问题反馈
+                </span>
+            </div>
+            <div class="recommed">
+                <span class="recommed1">推荐</span>
+                <span class="recommed2">最新主题</span>
+            </div>
+            <div class="iron">
+                <% for(var i=0;i<list.length;i++){ %>
+                <div class="clear p15 iron1"> 
+                    <div class="fl"> 
+                        <img width="100%" class="image" src=<%= list[i].src %>  alt="">
+                    </div>
+                    <div class="fl"><br>
+                        <span class="coddimy"><%= list[i].name %></span> 
+                        <span class="desc2"><%= list[i].desc2 %></span>
+                        <span class="desc1"><%= list[i].desc1 %></span>
+                        <p class="fs14 mt10  desc"><%= list[i].desc %></p>
+                    </div>
+                    <div class="forward fr"><br><br>
+                        <span class="forward1"> &nbsp;<i class="fa fa-commenting-o"></i> &nbsp;229826</span>
+                        <span class="forward2">&nbsp;<i class="fa fa-eye"></i>&nbsp;23345</span>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="fans-right">
+            <div class="fast">
+                <div class="fast1">快速入口</div>
+                <div class="fast2">
+                    <div>
+                        <img src="/images/62.png"  alt="">
+                        <p>新手入门</p> 
+                    </div>
+                    <div>
+                        <img src="/images/63.png"  alt="">
+                        <p>产品反馈</p> 
+                    </div>
+                </div>
+                <div class="fast2">
+                    <div>
+                        <img src="/images/64.png"  alt="">
+                        <p>系统升级</p> 
+                    </div>
+                    <div>
+                        <img src="/images/65.png"  alt="">
+                        <p>软件下载</p> 
+                    </div>
+                </div>
+            
+                <div class="fast2">
+                    <div>
+                        <img src="/images/66.png"  alt="">
+                        <p>活动中心</p> 
+                    </div>
+                    <div>
+                        <img src="/images/65.png"  alt="">
+                        <p>官方动态</p> 
+                    </div>
+                </div>
+
+                <div class="fast2">
+                    <div>
+                        <img src="/images/64.png"  alt="">
+                        <p>系统升级</p> 
+                    </div>
+                    <div>
+                        <img src="/images/65.png"  alt="">
+                        <p>软件下载</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="reward">
+                <div  class="reward1">
+                    <p class="span1">奖励2积分</p> 
+                    <p class="span2">已有14693人签到</p>
+                </div>
+                <div  class="reward2">
+                    <div class="reward3">
+                    <img src="/images/70.png" alt="">
+                    </div>
+                    <div class="reward4">
+                    <p>签到</p>
+                    </div>
+                </div>
+            </div>
+            <div class="products">
+                <br><p>新品推荐</p><br>
+                <div class="bigimage">
+                    <div class="wrap">
+                        <img class="show"  src="/images/73.jpg" alt="">
+                        <img  class="show"  src="/images/72.jpg" alt="">
+                    </div> 
+                    <ul class="clear fansDot">
+                        <li class="fans_dot"></li> 
+                        <li class="fans_dot"></li>
+                    </ul>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="community">
+        <div class="community1">
+            <div class="community3">
+                <span class="nav1">社区导航 </span>
+                <span class="nav2"> | 官方专区 |  铁粉交流区 | 产品交流区 | 服务大厅 | 网站地图</span> <br/>
+                <p class="friendship">友情链接 &nbsp;&nbsp;TCL集团官网  &nbsp;&nbsp; 西子湖畔 &nbsp;&nbsp;  欢社区 &nbsp;&nbsp; ZOL论坛 &nbsp;&nbsp;  太平洋电脑网  &nbsp;&nbsp;  MTK手机网 &nbsp;&nbsp;移动叔叔 &nbsp;&nbsp;奇珀市场</p>
+                <p class="friendship">慕课网 &nbsp;&nbsp;中国家电网论坛&nbsp;&nbsp; 智能电视论坛&nbsp;&nbsp; 系统之家 &nbsp;&nbsp;极米社区&nbsp;&nbsp;高清范&nbsp;&nbsp;智能电视&nbsp;&nbsp;资讯乐迷社区</p>
+                <p class="friendship">家电维修论坛 &nbsp;&nbsp; 光通讯 &nbsp;&nbsp;欢视网 &nbsp;&nbsp;电视软件下载 &nbsp;&nbsp;花火网  &nbsp;&nbsp;vr虚拟现实 &nbsp;&nbsp;申请友链投影网</p><br>
+            </div>
+            <div class="community4">
+                <img class="wechat" src="/images/26.png" alt="">
+                <p>在线咨询：4008-123456</p>
+            </div>
+        </div>
+        <div class="community2">
+            <p>©2010-2019 TCL CORPORATION ALL RIGHTS RESERVED.  TCL集团股份有限公司版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;粤公网安备 44130202000455号&nbsp;&nbsp;粤ICP备05040863号</p> 
+        </div>
+    </div>
+</body>
+<script>
+    var liElems=document.getElementsByClassName('fans_dot')
+    var div=document.getElementsByClassName('bigimage')[0]
+    var imgs=document.getElementsByClassName('show')
+    //   var prve=document.getElementById('prve')
+    //   var next=document.getElementById('next')
+    var num=0;
+    
+    for (var i=0;i<liElems.length;i++){
+        liElems[i].index=i
+        liElems[i].onclick=function(){
+        imgs[num].style.display='none'
+        liElems[num].style.background='rgba(0,0,0,0.3)'
+        imgs[this.index].style.display='inline-block'
+        this.style.background='#f74545'
+        num=this.index
+        }
+    }
+    var timer
+    function timerleave(){
+        timer=setInterval(function(){
+            nextImage()
+        },1000)
+    }
+    //鼠标移上去，图片暂停
+    div.onmouseover=function(){
+        clearInterval(timer)
+    }
+    div.onmouseleave=function(){
+        timerleave()
+    }
+    function nextImage(){
+        imgs[num].style.display='none'
+        liElems[num].style.background='rgba(0,0,0,0.3)'
+        num++
+        if(num>imgs.length-1){
+            num=0
+        }
+        imgs[num].style.display='inline-block'
+        liElems[num].style.background='#f74545'
+    }
+
+</script>
+</html>

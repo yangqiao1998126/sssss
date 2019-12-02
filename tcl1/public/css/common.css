@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.p15{
+    padding: 15px;
+}
+.mt10{
+    margin-top: 10px;
+}
+ 
+.clear:after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.color-gray{
+    color: #ccc;
+}
+.fs14{
+    font-size: 14px;
+}
+.fs18{
+    font-size: 18px;
+}
+.align-right{
+    text-align: right;
+}
+.bor{
+    border:rgb(214, 210, 210) 1px solid;
+    width:110px;
+    padding-left:10px;
+    border-radius: 5px;
+    color:orangered;
+}
+.color1{
+    color:#999;
+}

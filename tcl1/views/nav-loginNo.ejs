@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style:none;
+        }
+        .nav-w{
+            width: 100%;
+            height: 60px;
+            background: #fff;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .nav-w img{
+            margin: 7px 40px;
+            float: left;
+        }
+        .nav-title{
+            margin-left: 50px;
+            display: flex;
+            height: 60px;
+        }
+        .nav-title:after{
+            clear: both;
+            display: block;
+            content: '';
+        }
+        .nav-title li{
+            list-style: none;
+            float: left;
+            color: #333;
+            flex: 1;
+            line-height: 60px;
+            text-align: center;
+            font-size: 14px;
+            /* border-bottom: darkblue 1px solid; */
+        }
+        .nav-title li:hover{
+            border-bottom: #FF0000 3px solid;
+            color: #FF0000;
+            cursor: pointer;
+        }
+        .nav-left{
+            width: 40%;
+            float: left;
+        }
+        .nav-right{
+            width: 45%;
+            float: right;
+        }
+        .nav-right:after{
+            clear: both;
+            display: block;
+            content: '';
+         }
+        .nav-title-o{
+            height: 60px;
+            margin-right: 30px;
+        }
+        .nav-title-o li{
+            float: right;
+            color: #333;
+            line-height: 60px;
+            text-align: center;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+        .nav-title-o li:hover{
+            color: #FF0000;
+            cursor: pointer;
+        }
+        .put{
+            float: right;
+            margin-top: 13px;
+            width: 170px;
+            height: 30px;
+            padding-left: 10px;
+            outline: none;
+            margin-right: 0px;
+        }
+        .text-d{
+            float: right;
+            position: relative;
+            
+            
+        }
+        .circle-g{
+            width: 25px;
+            height: 25px;
+            background: #E4E4E4;
+            position: absolute;
+            border-radius: 100px;
+            right: 10px;
+            top: 17px;
+        }
+        .circle-g i{
+            margin-left: 5px;
+            line-height: 25px;
+            color: #ACACAC;
+            cursor: pointer;
+        }
+        .airs{
+            width:100%;
+            height: 215px;
+            background: #fff;
+            position: absolute;
+            left: 0px;
+            display: flex;
+            display: none;
+            z-index: 900;
+        }
+        .airs div{
+            width: 15%;
+            /* border: black solid 1px;     */
+            float: left;     
+            height: 100%;  
+           
+        }
+/* 空调 */
+        .airs div:nth-child(1){
+            margin-left: 170px;
+        }
+        .air-n{
+            line-height: 20px;
+            color: #333;
+        }
+        .air-p{
+            line-height: 20px;
+            font-size: 12px;
+            color: #FF0000;
+        }
+        .air-c:hover .airs{
+            display: block;
+        }
+/* 电视 */     
+        .c-tv{
+            width:100%;
+            height: 215px;
+            background: #fff;
+            position: absolute;
+            left: 0px;
+            display: flex;
+            display: none;
+            z-index: 900;
+        }
+        .c-tv div{
+            width: 15%;
+            /* border: black solid 1px;     */
+            float: left;     
+            height: 100%;  
+        } 
+        .c-tv div:nth-child(1){
+            margin-left: 170px;
+        }
+        .tv-n{
+            line-height: 20px;
+            color: #333;
+        }
+        .tv-p{
+            line-height: 20px;
+            font-size: 12px;
+            color: #FF0000;
+        }
+        .tv1:hover .c-tv{
+            display: block;
+        }
+ /* 冰箱 */     
+        .fre{
+            width:100%;
+            height: 215px;
+            background: #fff;
+            position: absolute;
+            left: 0px;
+            display: flex;
+            display: none;
+            z-index: 900;
+        }
+        .fre div{
+            width: 15%;
+            /* border: black solid 1px;     */
+            float: left;     
+            height: 100%;  
+        } 
+        .fre div:nth-child(1){
+            margin-left: 170px;
+        }
+        .tv-n{
+            line-height: 20px;
+            color: #333;
+        }
+        .tv-p{
+            line-height: 20px;
+            font-size: 12px;
+            color: #FF0000;
+        }
+        .friage:hover .fre{
+            display: block;
+        }
+ /* 洗衣机 */     
+        .wash{
+            width:100%;
+            height: 215px;
+            background: #fff;
+            position: absolute;
+            left: 0px;
+            display: flex;
+            display: none;
+            z-index: 900;
+        }
+        .wash div{
+            width: 15%;
+            /* border: black solid 1px;     */
+            float: left;     
+            height: 100%;  
+        } 
+        .wash div:nth-child(1){
+            margin-left: 170px;
+        }
+        .tv-n{
+            line-height: 20px;
+            color: #333;
+        }
+        .tv-p{
+            line-height: 20px;
+            font-size: 12px;
+            color: #FF0000;
+        }
+        .washing:hover .wash{
+            display: block;
+        }   
+ /* 健康电器 */     
+        .hea{
+            width:100%;
+            height: 215px;
+            background: #fff;
+            position: absolute;
+            left: 0px;
+            display: flex;
+            display: none;
+            z-index: 900;
+        }
+        .hea div{
+            width: 15%;
+            /* border: black solid 1px;     */
+            float: left;     
+            height: 100%;  
+        } 
+        .hea div:nth-child(1){
+            margin-left: 170px;
+        }
+        .tv-n{
+            line-height: 20px;
+            color: #333;
+        }
+        .tv-p{
+            line-height: 20px;
+            font-size: 12px;
+            color: #FF0000;
+        }
+        .health:hover .hea{
+            display: block;
+        }  
+/* 智能硬件 */     
+        .hard{
+            width:100%;
+            height: 215px;
+            background: #fff;
+            position: absolute;
+            left: 0px;
+            display: flex;
+            display: none;
+            z-index: 900;
+        }
+        .hard div{
+            width: 15%;
+            /* border: black solid 1px;     */
+            float: left;     
+            height: 100%;  
+        } 
+        .hard div:nth-child(1){
+            margin-left: 170px;
+        }
+        .tv-n{
+            line-height: 20px;
+            color: #333;
+        }
+        .tv-p{
+            line-height: 20px;
+            font-size: 12px;
+            color: #FF0000;
+        }
+        .int:hover .hard{
+            display: block;
+        } 
+        .tv{
+            margin-top: 0px;
+        }             
+    </style>
+</head>
+<body>
+    <div class="nav-w">
+        <img width="75px" height="45px" src="/newimages/logo.png" alt="">
+        <div class="nav-left">
+        <ul class="nav-title">
+            <a href="/"><li>首页</li></a>
+            <li class="air-c"><a href="/login" style="text-decoration: none;color: #000;">空调</a>
+                <div class="airs">
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/a1.jpg" alt="">
+                        <p class="air-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="air-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/a3.jpg" alt="">
+                        <p class="air-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="air-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/a4.jpg" alt="">
+                        <p class="air-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="air-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/a2.jpg" alt="">
+                        <p class="air-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="air-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/a4.jpg" alt="">
+                        <p class="air-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="air-p">4099.00元</p>
+                    </div>
+                </div>
+            </li>
+            <li class="tv1">电视
+                <div class="c-tv">
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/t3.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/t4.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/t1.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/t2.png" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/t5.png" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                </div>
+            </li>
+            <li class="friage">冰箱
+                <div class="fre">
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/ice1.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/ice2.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/ice3.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/ice4.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/ice5.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                </div>
+            </li>
+            <li class="washing">洗衣机
+                <div class="wash">
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/w1.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/w2.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/w3.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/w4.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/w5.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                </div>
+            </li>
+            <li class="health">健康电器
+                <div class="hea">
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/j1.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/j1.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/j3.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="170px" style="margin-top: 40px;" src="/newimages/j4.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/j5.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                </div>
+            </li>
+            <li class="int">智能硬件
+                <div class="hard">
+                    <div>
+                        <img width="180px" style="margin-top: 33px;margin-left: 15px;" src="/newimages/pei1.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="180px" style="margin-top: 33px;margin-left: 15px;" src="/newimages/pei2.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="180px" style="margin-top: 33px;margin-left: 15px;" src="/newimages/pei3.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="180px" style="margin-top: 33px;margin-left: 15px;" src="/newimages/pei4.jpg" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                    <div>
+                        <img width="130px" style="margin-top: 15px;" src="/newimages/pei5.png" alt="">
+                        <p class="tv-n">TCL大3匹三级变频冷暖空调</p>
+                        <p class="tv-p">4099.00元</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="nav-right">
+        <ul class="nav-title-o">
+           <div class="text-d">
+            <input class="put" type="text" placeholder="领卷立减" onfocus="this.placeholder=''" onblur="this.placeholder='领卷立减'">
+               <div class="circle-g">
+                   <a><i class="fa fa-search"></i></a>
+                </div>
+            </div>
+            <a href="/IntegralMall"><li>积分兑换</li></a>
+            <li>XESS门店</li>
+            <li>视频教程</li>
+            <li>服务</li>
+            <p style="float: right; margin-top: 18px; margin-right: 20px;color: #E3E3E3;">|</p>
+        </ul>       
+    </div>
+    </div>
+</body>
+</html>
